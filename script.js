@@ -76,7 +76,7 @@
   function initPetals() {
     const canvas = document.getElementById('petal-canvas');
     if (!canvas) return;
-    if (isLowBandwidth || isSlow) { canvas.style.display = 'none'; return; }
+    if (isLowBandwidth || isSlow || matchMedia('(prefers-reduced-motion: reduce)').matches) { canvas.style.display = 'none'; return; }
     const ctx = canvas.getContext('2d');
     let w, h;
     const colors = ['#C4713B', '#E8A838', '#D4A34A', '#3D6B35', '#5A8A52'];
@@ -793,20 +793,6 @@
   }
 
 
-  /* ─── HERO VIDEO ─── */
-  function initHeroVideo() {
-    const video = document.querySelector('.hero-video');
-    if (!video) return;
-    if (isLowBandwidth) { video.remove(); return; }
-    // Try loading the video; if it loads, show it
-    video.addEventListener('canplaythrough', () => video.classList.add('loaded'), { once: true });
-    // Trigger load after DOM is ready
-    video.preload = 'auto';
-    video.load();
-    // If video fails to load (no file), do nothing — stills remain visible
-    video.addEventListener('error', () => video.remove());
-  }
-
   /* ─── MICRO-ANIMATIONS: HEART BOUNCE ─── */
   function initHeartBounce() {
     document.addEventListener('click', e => {
@@ -927,7 +913,6 @@
     initNavbar();
     initMobileMenu();
     initReveal();
-    initHeroVideo();
     initHeartBounce();
 
     // Load products data, then init features that depend on it
