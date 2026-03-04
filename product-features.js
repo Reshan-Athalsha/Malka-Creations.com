@@ -212,15 +212,18 @@
       <div class="container">
         <h3 class="related-title">You may also like</h3>
         <div class="related-grid">
-          ${related.map(p => `
+          ${related.map(p => {
+            const safeName = (p.name || '').replace(/[<>"'&]/g, '');
+            const safePrice = (p.price || '').replace(/[<>"'&]/g, '');
+            return `
             <a class="related-card" href="${basePath}products/${p.id}.html">
-              <img class="related-card-img" src="${basePath}${p.img}" alt="${p.name}" loading="lazy">
+              <img class="related-card-img" src="${basePath}${p.img}" alt="${safeName}" loading="lazy" decoding="async">
               <div class="related-card-info">
-                <div class="related-card-name">${p.name}</div>
-                <div class="related-card-price">${p.price}</div>
+                <div class="related-card-name">${safeName}</div>
+                <div class="related-card-price">${safePrice}</div>
               </div>
             </a>
-          `).join('')}
+          `}).join('')}
         </div>
       </div>
     `;
@@ -307,15 +310,18 @@
       <div class="container">
         <h3 class="rv-title">Recently Viewed</h3>
         <div class="rv-scroll">
-          ${items.map(p => `
+          ${items.map(p => {
+            const safeName = (p.name || '').replace(/[<>"'&]/g, '');
+            const safePrice = (p.price || '').replace(/[<>"'&]/g, '');
+            return `
             <a class="rv-card" href="${basePath}products/${p.id}.html">
-              <img class="rv-card-img" src="${basePath}${p.img}" alt="${p.name}" loading="lazy">
+              <img class="rv-card-img" src="${basePath}${p.img}" alt="${safeName}" loading="lazy" decoding="async">
               <div class="rv-card-info">
-                <div class="rv-card-name">${p.name}</div>
-                <div class="rv-card-price">${p.price}</div>
+                <div class="rv-card-name">${safeName}</div>
+                <div class="rv-card-price">${safePrice}</div>
               </div>
             </a>
-          `).join('')}
+          `}).join('')}
         </div>
       </div>
     `;

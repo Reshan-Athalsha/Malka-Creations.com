@@ -19,6 +19,30 @@
     });
   }
 
+  /* ─── SCROLL LOCK (iOS-safe) ─── */
+  let scrollLockCount = 0;
+  let savedScrollY = 0;
+  function lockScroll() {
+    if (scrollLockCount === 0) {
+      savedScrollY = window.scrollY;
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = -savedScrollY + 'px';
+      document.body.style.width = '100%';
+    }
+    scrollLockCount++;
+  }
+  function unlockScroll() {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, savedScrollY);
+    }
+  }
+
   /* ─── WEBP FALLBACK ─── */
   function supportsWebP(callback) {
     const img = new Image();
@@ -155,12 +179,12 @@
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('open');
       menu.classList.toggle('open');
-      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      if (menu.classList.contains('open')) lockScroll(); else unlockScroll();
     });
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('open'); menu.classList.remove('open');
-        document.body.style.overflow = '';
+        unlockScroll();
       });
     });
   }
@@ -465,11 +489,13 @@
         const p = productsData.find(x => x.id === id);
         if (!p) return '';
         const href = 'products/' + id + '.html';
+        const safeName = (p.name || '').replace(/[<>"'&]/g, '');
+        const safePrice = (p.price || '').replace(/[<>"'&]/g, '');
         return `<div class="wishlist-item">
-          <a href="${href}"><img class="wishlist-item-img" src="${p.img}" alt="${p.name}"></a>
+          <a href="${href}"><img class="wishlist-item-img" src="${p.img}" alt="${safeName}"></a>
           <div class="wishlist-item-info">
-            <a href="${href}" class="wishlist-item-name">${p.name}</a>
-            <div class="wishlist-item-price">${p.price}</div>
+            <a href="${href}" class="wishlist-item-name">${safeName}</a>
+            <div class="wishlist-item-price">${safePrice}</div>
           </div>
           <button class="wishlist-item-remove" data-id="${id}" aria-label="Remove">&times;</button>
         </div>`;
@@ -485,14 +511,14 @@
     function openDrawer() {
       if (drawer) drawer.classList.add('open');
       if (overlay) overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      lockScroll();
       renderDrawer();
     }
 
     function closeDrawer() {
       if (drawer) drawer.classList.remove('open');
       if (overlay) overlay.classList.remove('open');
-      document.body.style.overflow = '';
+      unlockScroll();
     }
 
     if (navBtn) navBtn.addEventListener('click', openDrawer);
@@ -524,11 +550,13 @@
 
     scroll.innerHTML = items.map(p => {
       const href = 'products/' + p.id + '.html';
+      const safeName = (p.name || '').replace(/[<>"'&]/g, '');
+      const safePrice = (p.price || '').replace(/[<>"'&]/g, '');
       return `<a class="rv-card" href="${href}">
-        <img class="rv-card-img" src="${p.img}" alt="${p.name}" loading="lazy">
+        <img class="rv-card-img" src="${p.img}" alt="${safeName}" loading="lazy" decoding="async">
         <div class="rv-card-info">
-          <div class="rv-card-name">${p.name}</div>
-          <div class="rv-card-price">${p.price}</div>
+          <div class="rv-card-name">${safeName}</div>
+          <div class="rv-card-price">${safePrice}</div>
         </div>
       </a>`;
     }).join('');
@@ -599,10 +627,10 @@
         const img = item.querySelector('img');
         if (!img) return;
         lbImg.src = img.src; lbImg.alt = img.alt;
-        lb.classList.add('open'); document.body.style.overflow = 'hidden';
+        lb.classList.add('open'); lockScroll();
       });
     });
-    function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    function closeLb() { lb.classList.remove('open'); unlockScroll(); }
     if (lbClose) lbClose.addEventListener('click', closeLb);
     lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
@@ -817,12 +845,12 @@
 
     function open() {
       overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      lockScroll();
       setTimeout(() => input.focus(), 100);
     }
     function close() {
       overlay.classList.remove('open');
-      document.body.style.overflow = '';
+      unlockScroll();
       input.value = '';
       results.innerHTML = '<div class="gs-hint">Type to search plants & creations\u2026</div>';
     }
@@ -860,11 +888,14 @@
       }
       results.innerHTML = matches.map(p => {
         const href = linkBase + p.id + '.html';
+        const safeName = (p.name || '').replace(/[<>"'&]/g, '');
+        const safePrice = (p.price || '').replace(/[<>"'&]/g, '');
+        const safeCat = (p.category || '').replace(/[<>"'&]/g, '');
         return '<a class="gs-result-item" href="' + href + '">' +
-          '<img class="gs-result-img" src="' + imgBase + p.img + '" alt="' + p.name + '" loading="lazy">' +
+          '<img class="gs-result-img" src="' + imgBase + p.img + '" alt="' + safeName + '" loading="lazy" decoding="async">' +
           '<div class="gs-result-info">' +
-            '<div class="gs-result-name">' + p.name + '</div>' +
-            '<div class="gs-result-meta"><span>' + (p.price || '') + '</span><span>' + (p.category || '') + '</span></div>' +
+            '<div class="gs-result-name">' + safeName + '</div>' +
+            '<div class="gs-result-meta"><span>' + safePrice + '</span><span>' + safeCat + '</span></div>' +
           '</div></a>';
       }).join('');
     });

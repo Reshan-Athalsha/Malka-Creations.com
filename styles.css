@@ -2622,6 +2622,7 @@ textarea { resize: vertical; min-height: 100px; }
 .blog-coming p { color: var(--smoke); font-size: 15px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
 @media (max-width: 840px) {
   .blog-grid--featured { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr !important; }
   .blog-card--featured { grid-row: span 1; }
   .blog-card--horizontal { flex-direction: column; }
   .blog-card--horizontal .blog-card-img { width: 100%; aspect-ratio: 16/10; }

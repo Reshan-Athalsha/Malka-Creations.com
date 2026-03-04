@@ -19,9 +19,25 @@
   }
 
   var closeEl=document.getElementById('gs-close');
+  var savedScrollY=0;
 
-  function open(){overlay.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){input.focus()},100)}
-  function close(){overlay.classList.remove('open');document.body.style.overflow='';input.value='';results.innerHTML=''}
+  function open(){
+    savedScrollY=window.scrollY;
+    document.body.style.position='fixed';
+    document.body.style.top='-'+savedScrollY+'px';
+    document.body.style.width='100%';
+    overlay.classList.add('open');
+    setTimeout(function(){input.focus()},100);
+  }
+  function close(){
+    overlay.classList.remove('open');
+    document.body.style.position='';
+    document.body.style.top='';
+    document.body.style.width='';
+    window.scrollTo(0,savedScrollY);
+    input.value='';
+    results.innerHTML='';
+  }
 
   if(btn)btn.addEventListener('click',function(){load(open)});
   if(closeEl)closeEl.addEventListener('click',close);
@@ -42,7 +58,10 @@
     results.innerHTML=matches.map(function(p){
       var href=prefix+'products/'+p.id+'.html';
       var img=prefix+(p.img||'assets/opt/placeholder.webp');
-      return '<a href="'+href+'" class="gs-result-item"><img src="'+img+'" alt="" class="gs-result-img" loading="lazy" decoding="async"><div class="gs-result-info"><div class="gs-result-name">'+p.name+'</div><div class="gs-result-meta"><span>'+(p.price||'')+'</span><span>'+(p.category||'')+'</span></div></div></a>'
+      var safeName=(p.name||'').replace(/[<>"'&]/g,'');
+      var safePrice=(p.price||'').replace(/[<>"'&]/g,'');
+      var safeCat=(p.category||'').replace(/[<>"'&]/g,'');
+      return '<a href="'+href+'" class="gs-result-item"><img src="'+img+'" alt="'+safeName+'" class="gs-result-img" loading="lazy" decoding="async"><div class="gs-result-info"><div class="gs-result-name">'+safeName+'</div><div class="gs-result-meta"><span>'+safePrice+'</span><span>'+safeCat+'</span></div></div></a>'
     }).join('');
   });
 
