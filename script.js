@@ -645,7 +645,24 @@
       if (phone) text += ` | Phone: ${phone}`;
       window.open(`https://wa.me/94705845678?text=${encodeURIComponent(text)}`, '_blank');
       form.reset();
+      showToast('Message sent! We\'ll reply on WhatsApp shortly.');
     });
+  }
+
+  /* ─── TOAST NOTIFICATION ─── */
+  function showToast(msg) {
+    let t = document.getElementById('malka-toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'malka-toast';
+      t.className = 'malka-toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.remove('visible');
+    void t.offsetWidth;
+    t.classList.add('visible');
+    setTimeout(() => t.classList.remove('visible'), 4000);
   }
 
   /* ─── COUNTER ANIMATION ─── */
@@ -733,6 +750,18 @@
     });
   }
 
+  /* ─── STAR RATINGS ON CARDS ─── */
+  function initStarRatings() {
+    document.querySelectorAll('.card').forEach(card => {
+      const foot = card.querySelector('.card-foot');
+      if (!foot || foot.querySelector('.card-rating')) return;
+      const rating = document.createElement('span');
+      rating.className = 'card-rating';
+      rating.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="var(--saffron)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg> 4.9';
+      foot.appendChild(rating);
+    });
+  }
+
   /* ─── SEARCH HIDDEN CSS ─── */
   // Add dynamic style for search-hidden and price-hidden
   const style = document.createElement('style');
@@ -808,6 +837,7 @@
       initWishlist();
       initRecentlyViewed();
       initAutoBadges();
+      initStarRatings();
     });
 
     initLoadMore();

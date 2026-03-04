@@ -44,6 +44,7 @@
             initProductWishlist(product);
             trackRecentlyViewed(product);
             initRecentlyViewedSection(products);
+            initDeliveryLink(product);
         })
         .catch(() => { });
 
@@ -323,6 +324,23 @@
         if (footer) {
             footer.parentNode.insertBefore(section, footer);
         }
+    }
+
+    /* ─── DELIVERY INFO LINK ─── */
+    function initDeliveryLink(product) {
+        const promise = document.querySelector('.pd-promise');
+        if (!promise) return;
+
+        // Add delivery link after promises
+        const link = document.createElement('a');
+        link.href = basePath + 'delivery.html';
+        link.className = 'pd-delivery-link';
+        link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>';
+        link.innerHTML += product.priceNum >= 3000
+            ? ' <strong>Free delivery</strong> on this order — <span>view delivery info →</span>'
+            : ' Free delivery over Rs. 3,000 — <span>view delivery info →</span>';
+
+        promise.parentNode.insertBefore(link, promise.nextSibling);
     }
 
     /* ─── UTILITIES ─── */

@@ -3,6 +3,13 @@
    No templates. No shortcuts. Just craft.
    ═══════════════════════════════════════════════ */
 
+/* ─── UTILITIES ─── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
 /* ─── TOKENS ─── */
 :root {
   --stone:    #2C1810;
@@ -603,6 +610,11 @@ input, textarea { font-family: var(--ff-sans); font-size: 16px; /* prevent iOS z
 .card-body p { font-size: 13px; color: var(--smoke); line-height: 1.5; margin-bottom: 12px; }
 .card-foot { display: flex; justify-content: space-between; align-items: center; }
 .price { font-family: var(--ff-serif); font-size: 18px; font-weight: 600; }
+.card-rating {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 12px; font-weight: 600; color: var(--saffron);
+  margin-left: auto; padding-left: 8px;
+}
 .card-cta {
   font-size: 13px; font-weight: 600; color: var(--clay);
   transition: transform .2s;
@@ -781,6 +793,30 @@ input:focus, textarea:focus {
 input::placeholder, textarea::placeholder { color: #b3a79c; }
 textarea { resize: vertical; min-height: 100px; }
 .btn-submit { width: 100%; }
+.form-alt-contact {
+  font-size: 13px; color: var(--smoke); opacity: .7;
+  margin-top: 12px; text-align: center;
+}
+.form-alt-contact a {
+  color: var(--clay); text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Toast Notification ── */
+.malka-toast {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--stone); color: var(--cream);
+  padding: 14px 28px; border-radius: 12px;
+  font-size: 14px; font-weight: 500;
+  box-shadow: 0 12px 40px rgba(44,24,16,.2);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 10000;
+}
+.malka-toast.visible {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
 
 @media (max-width: 840px) {
   .reach-layout { grid-template-columns: 1fr; }
@@ -1098,6 +1134,19 @@ textarea { resize: vertical; min-height: 100px; }
   font-size: 14px; font-weight: 500; color: var(--smoke);
 }
 .pd-promise-item svg { color: var(--leaf); flex-shrink: 0; }
+
+.pd-delivery-link {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--smoke);
+  margin-top: 16px; padding: 12px 16px;
+  background: linear-gradient(135deg, var(--parch), var(--cream));
+  border-radius: 10px; text-decoration: none;
+  transition: box-shadow .3s;
+}
+.pd-delivery-link:hover { box-shadow: 0 4px 16px rgba(44,24,16,.1); }
+.pd-delivery-link svg { color: var(--clay); flex-shrink: 0; }
+.pd-delivery-link strong { color: var(--leaf); }
+.pd-delivery-link span { color: var(--clay); font-weight: 600; }
 
 /* Responsive — Product Detail */
 @media (max-width: 840px) {
@@ -2217,9 +2266,13 @@ textarea { resize: vertical; min-height: 100px; }
 .care-bento-item .care-more { margin-top: 10px; }
 .care-bento-item .care-more-body p { font-size: 12.5px; line-height: 1.7; }
 
-.care-monsoon-section {
-  border-radius: var(--radius-lg); overflow: hidden;
-  margin-top: 64px;
+/* monsoon grid */
+.care-monsoon-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 36px;
+}
+@media (max-width: 600px) {
+  .care-monsoon-grid { grid-template-columns: 1fr; }
 }
 
 

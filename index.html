@@ -72,7 +72,7 @@
           "bestRating": "5",
           "worstRating": "1"
         },
-        "sameAs": []
+        "sameAs": ["https://wa.me/94705845678"]
       },
       {
         "@type": "WebSite",
@@ -347,7 +347,7 @@
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.35-4.35" />
         </svg>
-        <input type="text" id="search-input" placeholder="Search plants & creations..." autocomplete="off">
+        <input type="text" id="search-input" placeholder="Search plants & creations..." autocomplete="off" aria-label="Search plants and creations">
         <button class="search-clear" id="search-clear" aria-label="Clear search">&times;</button>
       </div>
 
@@ -359,6 +359,7 @@
           <button class="filter" data-filter="premium">Premium</button>
         </div>
         <div class="sort-wrap">
+          <label for="sort-select" class="sr-only">Sort products</label>
           <select class="sort-select" id="sort-select">
             <option value="default">Sort by</option>
             <option value="price-asc">Price: Low → High</option>
@@ -378,8 +379,8 @@
         </div>
         <div class="price-slider" id="price-slider">
           <div class="price-slider-track" id="price-slider-track"></div>
-          <input type="range" id="price-min" min="1000" max="3500" value="1000" step="100">
-          <input type="range" id="price-max" min="1000" max="3500" value="3500" step="100">
+          <input type="range" id="price-min" min="1000" max="3500" value="1000" step="100" aria-label="Minimum price">
+          <input type="range" id="price-max" min="1000" max="3500" value="3500" step="100" aria-label="Maximum price">
         </div>
       </div>
 
@@ -1060,15 +1061,24 @@
         </div>
         <div class="reach-form reveal-el">
           <form id="contact-form">
-            <div class="f-row"><input type="text" name="name" placeholder="Your name *" required><input type="tel"
-                name="phone" placeholder="Phone number"></div>
-            <input type="email" name="email" placeholder="Email address *" required>
-            <input type="text" name="subject" placeholder="What's this about?">
-            <textarea name="message" placeholder="Tell us what you're looking for..." rows="5" required></textarea>
+            <div class="f-row"><input type="text" name="name" placeholder="Your name *" required aria-label="Your name"><input type="tel"
+                name="phone" placeholder="Phone number" aria-label="Phone number"></div>
+            <input type="email" name="email" placeholder="Email address *" required aria-label="Email address">
+            <input type="text" name="subject" placeholder="What's this about?" aria-label="Subject">
+            <textarea name="message" placeholder="Tell us what you're looking for..." rows="5" required aria-label="Your message"></textarea>
             <button type="submit" class="btn-fill btn-submit">Send message</button>
+            <p class="form-alt-contact">Or email us directly at <a href="mailto:hello@malka-creations.lk">hello@malka-creations.lk</a></p>
           </form>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Recently Viewed -->
+  <section class="recently-viewed" id="recently-viewed" style="display:none;">
+    <div class="container">
+      <h3 class="rv-title">Recently Viewed</h3>
+      <div class="rv-scroll" id="rv-scroll"></div>
     </div>
   </section>
 
@@ -1105,14 +1115,6 @@
     </div>
   </footer>
 
-  <!-- Recently Viewed -->
-  <section class="recently-viewed" id="recently-viewed" style="display:none;">
-    <div class="container">
-      <h3 class="rv-title">Recently Viewed</h3>
-      <div class="rv-scroll" id="rv-scroll"></div>
-    </div>
-  </section>
-
   <!-- Wishlist Drawer -->
   <div class="wishlist-drawer" id="wishlist-drawer">
     <div class="wishlist-drawer-header">
@@ -1126,7 +1128,7 @@
   <div class="wishlist-overlay" id="wishlist-overlay"></div>
 
   <!-- Cookie Consent -->
-  <div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
     <div class="cookie-inner">
       <p>We use cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</p>
       <div class="cookie-actions">
@@ -1138,7 +1140,7 @@
 
 
   <!-- Lightbox -->
-  <div class="lb" id="lb"><button class="lb-close" id="lb-close">×</button><img id="lb-img" src="" alt=""></div>
+  <div class="lb" id="lb" role="dialog" aria-label="Image preview"><button class="lb-close" id="lb-close" aria-label="Close image preview">×</button><img id="lb-img" src="" alt=""></div>
 
   <!-- Back to top -->
   <button class="btt" id="btt" aria-label="Back to top">↑</button>
