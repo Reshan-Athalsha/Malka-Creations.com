@@ -1,0 +1,9 @@
+# මල්කා මල් පැල & Creations — robots.txt
+# Replace YOUR-DOMAIN with your actual domain when ready
+
+User-agent: *
+Allow: /
+Disallow: /Fonts/
+
+# Sitemap location
+Sitemap: https://www.malka-creations.lk/sitemap.xml
