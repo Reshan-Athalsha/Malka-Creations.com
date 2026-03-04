@@ -2058,7 +2058,7 @@ textarea { resize: vertical; min-height: 100px; }
   width: 52px; height: 52px; border-radius: 14px;
   background: linear-gradient(135deg, var(--parch), var(--cream));
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px; font-size: 26px;
+  margin-bottom: 18px; color: var(--clay);
   transition: transform .4s var(--ease-spring);
 }
 .care-bento-item:hover .care-bento-icon { transform: rotate(-8deg) scale(1.1); }
@@ -2083,6 +2083,7 @@ textarea { resize: vertical; min-height: 100px; }
 .care-bento-item:nth-child(1) .care-bento-icon {
   background: rgba(253,248,240,.1);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--cream);
 }
 .care-bento-item:nth-child(1) .care-bento-num {
   font-size: clamp(80px, 12vw, 140px);
@@ -2095,6 +2096,10 @@ textarea { resize: vertical; min-height: 100px; }
   transform: translateY(-5px);
   box-shadow: 0 24px 64px rgba(44,24,16,.2);
 }
+.care-bento-item:nth-child(1) .care-more-btn { color: rgba(253,248,240,.5); }
+.care-bento-item:nth-child(1) .care-more-btn:hover,
+.care-bento-item:nth-child(1) .care-more-btn[aria-expanded="true"] { color: var(--saffron); }
+.care-bento-item:nth-child(1) .care-more-body p { color: rgba(253,248,240,.7); }
 
 /* ── Item 2 (col 8-12) ── */
 .care-bento-item:nth-child(2) { grid-column: 8 / 13; }
@@ -2110,9 +2115,10 @@ textarea { resize: vertical; min-height: 100px; }
   grid-template-rows: auto auto;
   column-gap: 24px;
 }
-.care-bento-item:nth-child(4) .care-bento-icon { grid-row: 1 / 3; align-self: center; width: 64px; height: 64px; font-size: 32px; }
+.care-bento-item:nth-child(4) .care-bento-icon { grid-row: 1 / 4; align-self: center; width: 64px; height: 64px; }
 .care-bento-item:nth-child(4) h3 { grid-column: 2; align-self: end; }
 .care-bento-item:nth-child(4) p { grid-column: 2; }
+.care-bento-item:nth-child(4) .care-more { grid-column: 2; }
 .care-bento-item:nth-child(4) .care-bento-num { font-size: clamp(56px, 8vw, 96px); }
 
 /* ── Item 5 (col 1-7) ── */
@@ -2147,6 +2153,7 @@ textarea { resize: vertical; min-height: 100px; }
   .care-bento-item:nth-child(4) .care-bento-icon { grid-row: auto; }
   .care-bento-item:nth-child(4) h3 { grid-column: 1; }
   .care-bento-item:nth-child(4) p { grid-column: 1; }
+  .care-bento-item:nth-child(4) .care-more { grid-column: 1; }
 }
 .care-plant-section {
   margin-bottom: 56px; padding-bottom: 56px;
@@ -2169,6 +2176,47 @@ textarea { resize: vertical; min-height: 100px; }
   flex-shrink: 0; margin-top: 8px; transform: rotate(45deg);
 }
 .care-tips li strong { color: var(--stone); }
+
+/* ── Taxonomy label ── */
+.care-taxon {
+  font-size: 13px; opacity: 0.55; margin-bottom: 14px;
+  font-family: var(--ff-body); letter-spacing: .02em;
+}
+
+/* ── Read-more toggle ── */
+.care-more { margin-top: 14px; }
+.care-more-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--ff-body); font-size: 13px; font-weight: 600;
+  color: var(--clay); padding: 0;
+  letter-spacing: .03em; text-transform: uppercase;
+  transition: color .3s;
+}
+.care-more-btn:hover { color: var(--saffron); }
+.care-more-btn[aria-expanded="true"] { color: var(--saffron); }
+.care-more-body {
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height .5s var(--ease-out), opacity .4s, margin .3s;
+  margin-top: 0;
+}
+.care-more-body.open {
+  max-height: 600px; opacity: 1; margin-top: 12px;
+}
+.care-more-body p {
+  font-size: 13px; line-height: 1.8;
+  color: var(--smoke); opacity: .85;
+}
+.care-more-body sup { font-size: 10px; color: var(--clay); }
+
+/* dark variant for monsoon section */
+.care-more--dark .care-more-btn { color: rgba(255,255,255,.5); font-size: 12px; }
+.care-more--dark .care-more-btn:hover,
+.care-more--dark .care-more-btn[aria-expanded="true"] { color: rgba(255,255,255,.8); }
+
+/* bento items: keep read-more compact */
+.care-bento-item .care-more { margin-top: 10px; }
+.care-bento-item .care-more-body p { font-size: 12.5px; line-height: 1.7; }
+
 .care-monsoon-section {
   border-radius: var(--radius-lg); overflow: hidden;
   margin-top: 64px;
