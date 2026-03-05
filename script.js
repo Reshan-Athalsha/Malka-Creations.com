@@ -751,9 +751,9 @@
     }
     function deleteCookiesByPrefix() {
       var prefixes = Array.prototype.slice.call(arguments);
-      document.cookie.split(';').forEach(function(c) {
+      document.cookie.split(';').forEach(function (c) {
         var name = c.split('=')[0].trim();
-        prefixes.forEach(function(p) {
+        prefixes.forEach(function (p) {
           if (name.indexOf(p) === 0) {
             document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
           }
@@ -764,58 +764,58 @@
     // Inject banner HTML
     var bannerHTML =
       '<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">' +
-        '<div class="cookie-inner">' +
-          '<p>We use cookies to improve your experience. You can manage your cookie preferences or accept all cookies.</p>' +
-          '<div class="cookie-actions">' +
-            '<button class="cookie-accept" id="cookie-accept">Accept All</button>' +
-            '<button class="cookie-manage-btn" id="cookie-manage-btn">Manage</button>' +
-            '<button class="cookie-dismiss" id="cookie-dismiss">Reject Non-Essential</button>' +
-          '</div>' +
-        '</div>' +
+      '<div class="cookie-inner">' +
+      '<p>We use cookies to improve your experience. You can manage your cookie preferences or accept all cookies.</p>' +
+      '<div class="cookie-actions">' +
+      '<button class="cookie-accept" id="cookie-accept">Accept All</button>' +
+      '<button class="cookie-manage-btn" id="cookie-manage-btn">Manage</button>' +
+      '<button class="cookie-dismiss" id="cookie-dismiss">Reject Non-Essential</button>' +
+      '</div>' +
+      '</div>' +
       '</div>';
 
     // Inject modal HTML
     var modalHTML =
       '<div class="cookie-overlay" id="cookie-overlay"></div>' +
       '<div class="cookie-modal" id="cookie-modal" role="dialog" aria-label="Cookie preferences">' +
-        '<div class="cookie-modal-header">' +
-          '<h3>Cookie Preferences</h3>' +
-          '<button class="cookie-modal-close" id="cookie-modal-close" aria-label="Close">&times;</button>' +
-        '</div>' +
-        '<div class="cookie-modal-body">' +
-          '<p class="cookie-modal-desc">Choose which cookies you allow. Essential cookies are required for the website to function and cannot be disabled.</p>' +
-          '<div class="cookie-category">' +
-            '<div class="cookie-cat-header">' +
-              '<div><strong>Essential Cookies</strong><span class="cookie-cat-tag">Always Active</span></div>' +
-            '</div>' +
-            '<p class="cookie-cat-desc">Required for basic site functionality like page navigation, security, and accessibility. These cannot be turned off.</p>' +
-          '</div>' +
-          '<div class="cookie-category">' +
-            '<div class="cookie-cat-header">' +
-              '<label class="cookie-toggle"><input type="checkbox" id="cookie-analytics"><span class="cookie-slider"></span></label>' +
-              '<div><strong>Analytics Cookies</strong></div>' +
-            '</div>' +
-            '<p class="cookie-cat-desc">Help us understand how visitors use our website by collecting anonymous usage data like pages visited and time spent.</p>' +
-          '</div>' +
-          '<div class="cookie-category">' +
-            '<div class="cookie-cat-header">' +
-              '<label class="cookie-toggle"><input type="checkbox" id="cookie-marketing"><span class="cookie-slider"></span></label>' +
-              '<div><strong>Marketing Cookies</strong></div>' +
-            '</div>' +
-            '<p class="cookie-cat-desc">Used to deliver relevant advertisements and track ad campaign performance across websites.</p>' +
-          '</div>' +
-          '<div class="cookie-category">' +
-            '<div class="cookie-cat-header">' +
-              '<label class="cookie-toggle"><input type="checkbox" id="cookie-preferences"><span class="cookie-slider"></span></label>' +
-              '<div><strong>Preference Cookies</strong></div>' +
-            '</div>' +
-            '<p class="cookie-cat-desc">Remember your settings and choices like language, region, and display preferences for a personalised experience.</p>' +
-          '</div>' +
-        '</div>' +
-        '<div class="cookie-modal-footer">' +
-          '<button class="cookie-save-prefs" id="cookie-save-prefs">Save Preferences</button>' +
-          '<button class="cookie-accept-all" id="cookie-accept-all-modal">Accept All</button>' +
-        '</div>' +
+      '<div class="cookie-modal-header">' +
+      '<h3>Cookie Preferences</h3>' +
+      '<button class="cookie-modal-close" id="cookie-modal-close" aria-label="Close">&times;</button>' +
+      '</div>' +
+      '<div class="cookie-modal-body">' +
+      '<p class="cookie-modal-desc">Choose which cookies you allow. Essential cookies are required for the website to function and cannot be disabled.</p>' +
+      '<div class="cookie-category">' +
+      '<div class="cookie-cat-header">' +
+      '<div><strong>Essential Cookies</strong><span class="cookie-cat-tag">Always Active</span></div>' +
+      '</div>' +
+      '<p class="cookie-cat-desc">Required for basic site functionality like page navigation, security, and accessibility. These cannot be turned off.</p>' +
+      '</div>' +
+      '<div class="cookie-category">' +
+      '<div class="cookie-cat-header">' +
+      '<label class="cookie-toggle"><input type="checkbox" id="cookie-analytics"><span class="cookie-slider"></span></label>' +
+      '<div><strong>Analytics Cookies</strong></div>' +
+      '</div>' +
+      '<p class="cookie-cat-desc">Help us understand how visitors use our website by collecting anonymous usage data like pages visited and time spent.</p>' +
+      '</div>' +
+      '<div class="cookie-category">' +
+      '<div class="cookie-cat-header">' +
+      '<label class="cookie-toggle"><input type="checkbox" id="cookie-marketing"><span class="cookie-slider"></span></label>' +
+      '<div><strong>Marketing Cookies</strong></div>' +
+      '</div>' +
+      '<p class="cookie-cat-desc">Used to deliver relevant advertisements and track ad campaign performance across websites.</p>' +
+      '</div>' +
+      '<div class="cookie-category">' +
+      '<div class="cookie-cat-header">' +
+      '<label class="cookie-toggle"><input type="checkbox" id="cookie-preferences"><span class="cookie-slider"></span></label>' +
+      '<div><strong>Preference Cookies</strong></div>' +
+      '</div>' +
+      '<p class="cookie-cat-desc">Remember your settings and choices like language, region, and display preferences for a personalised experience.</p>' +
+      '</div>' +
+      '</div>' +
+      '<div class="cookie-modal-footer">' +
+      '<button class="cookie-save-prefs" id="cookie-save-prefs">Save Preferences</button>' +
+      '<button class="cookie-accept-all" id="cookie-accept-all-modal">Accept All</button>' +
+      '</div>' +
       '</div>';
 
     // Insert into page
@@ -868,14 +868,14 @@
     // Wire events
     document.getElementById('cookie-accept').addEventListener('click', acceptAll);
     document.getElementById('cookie-dismiss').addEventListener('click', rejectNonEssential);
-    document.getElementById('cookie-manage-btn').addEventListener('click', function() { hideBanner(); showModal(); });
+    document.getElementById('cookie-manage-btn').addEventListener('click', function () { hideBanner(); showModal(); });
     document.getElementById('cookie-modal-close').addEventListener('click', hideModal);
     overlay.addEventListener('click', hideModal);
     document.getElementById('cookie-save-prefs').addEventListener('click', saveFromModal);
     document.getElementById('cookie-accept-all-modal').addEventListener('click', acceptAll);
 
     // Expose global API to reopen cookie settings
-    window.openCookieSettings = function() { showModal(); };
+    window.openCookieSettings = function () { showModal(); };
 
     // Initial state
     var existing = getPrefs();
@@ -1030,8 +1030,8 @@
         return '<a class="gs-result-item" href="' + href + '">' +
           '<img class="gs-result-img" src="' + imgBase + p.img + '" alt="' + safeName + '" loading="lazy" decoding="async">' +
           '<div class="gs-result-info">' +
-            '<div class="gs-result-name">' + safeName + '</div>' +
-            '<div class="gs-result-meta"><span>' + safePrice + '</span><span>' + safeCat + '</span></div>' +
+          '<div class="gs-result-name">' + safeName + '</div>' +
+          '<div class="gs-result-meta"><span>' + safePrice + '</span><span>' + safeCat + '</span></div>' +
           '</div></a>';
       }).join('');
     });
@@ -1043,7 +1043,9 @@
     if (!form) return;
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const email = form.querySelector('input[type="email"]').value;
+      const emailInput = form.querySelector('input[type="email"]');
+      if (!emailInput) return;
+      const email = emailInput.value;
       if (!email) return;
       // Store subscription locally (replace with real email service in production)
       const subs = safeParseJSON(localStorage.getItem('malka_newsletter'), []);
@@ -1092,8 +1094,11 @@
 
   /* ─── STAGGERED CARD REVEAL ─── */
   function initStaggeredReveal() {
-    const grids = document.querySelectorAll('.plant-grid, .creations-grid');
+    const grids = document.querySelectorAll('#plants-grid, .creations-grid');
     if (!grids.length) return;
+    grids.forEach(g => {
+      g.querySelectorAll('.card').forEach(c => c.classList.add('card-stagger'));
+    });
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1119,6 +1124,9 @@
 
     const cards = carousel.querySelectorAll('.voice-card');
     const total = cards.length;
+    if (!total) return;
+
+    const gap = parseInt(getComputedStyle(carousel).gap) || 24;
 
     // Build dots
     for (let i = 0; i < total; i++) {
@@ -1129,26 +1137,25 @@
     }
     const dots = dotsWrap.querySelectorAll('.voice-dot');
 
+    function getCardWidth() {
+      return cards[0].offsetWidth + gap;
+    }
+
     function updateDots() {
-      const scrollLeft = carousel.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 24; // gap
-      const idx = Math.round(scrollLeft / cardWidth);
+      const idx = Math.round(carousel.scrollLeft / getCardWidth());
       dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     }
 
     function scrollToCard(i) {
-      const cardWidth = cards[0].offsetWidth + 24;
-      carousel.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+      carousel.scrollTo({ left: i * getCardWidth(), behavior: 'smooth' });
     }
 
     prev.addEventListener('click', () => {
-      const cardWidth = cards[0].offsetWidth + 24;
-      carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      carousel.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
     });
 
     next.addEventListener('click', () => {
-      const cardWidth = cards[0].offsetWidth + 24;
-      carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      carousel.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
     });
 
     carousel.addEventListener('scroll', () => updateDots(), { passive: true });
@@ -1168,6 +1175,25 @@
       const x = e.pageX - carousel.offsetLeft;
       carousel.scrollLeft = scrollLeft - (x - startX);
     });
+
+    // Auto-scroll: advance every 5s, pause on hover/touch
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let autoIdx = 0;
+      let paused = false;
+      const autoTimer = setInterval(() => {
+        if (paused) return;
+        autoIdx = (autoIdx + 1) % total;
+        scrollToCard(autoIdx);
+      }, 5000);
+      carousel.addEventListener('mouseenter', () => { paused = true; });
+      carousel.addEventListener('mouseleave', () => { paused = false; });
+      carousel.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+      carousel.addEventListener('touchend', () => { setTimeout(() => { paused = false; }, 3000); });
+      // Sync autoIdx with manual scroll
+      carousel.addEventListener('scroll', () => {
+        autoIdx = Math.round(carousel.scrollLeft / getCardWidth());
+      }, { passive: true });
+    }
   }
 
   /* ─── TIKTOK TOAST ─── */

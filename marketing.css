@@ -1,195 +1,8 @@
 /* ═══════════════════════════════════════════════
    මල්කා — MARKETING & GROWTH FEATURES
-   WhatsApp greeting, discount popup, social proof,
+   Discount popup, social proof,
    referral program, Instagram embed
    ═══════════════════════════════════════════════ */
-
-/* ─── WHATSAPP GREETING BUBBLE ─── */
-.wa-greeting {
-    position: fixed;
-    bottom: 100px;
-    right: 24px;
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px) scale(0.9);
-    transition: opacity 0.4s cubic-bezier(.22, 1, .36, 1),
-        transform 0.4s cubic-bezier(.22, 1, .36, 1),
-        visibility 0.4s;
-}
-
-.wa-greeting.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-}
-
-.wa-greeting-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, .15), 0 2px 8px rgba(0, 0, 0, .08);
-    width: 320px;
-    max-width: calc(100vw - 48px);
-    overflow: hidden;
-    animation: waGreetPulse 3s ease-in-out infinite;
-}
-
-@keyframes waGreetPulse {
-
-    0%,
-    100% {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, .15), 0 2px 8px rgba(0, 0, 0, .08);
-    }
-
-    50% {
-        box-shadow: 0 12px 40px rgba(37, 211, 102, .2), 0 2px 8px rgba(37, 211, 102, .1);
-    }
-}
-
-.wa-greeting-header {
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.wa-greeting-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, .3);
-    background: rgba(255, 255, 255, .2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.wa-greeting-avatar svg {
-    width: 22px;
-    height: 22px;
-    fill: #fff;
-}
-
-.wa-greeting-info {
-    flex: 1;
-}
-
-.wa-greeting-name {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.wa-greeting-status {
-    color: rgba(255, 255, 255, .8);
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.wa-greeting-status::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #7DF89B;
-    display: inline-block;
-}
-
-.wa-greeting-close {
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, .7);
-    font-size: 20px;
-    cursor: pointer;
-    padding: 4px;
-    line-height: 1;
-    transition: color 0.2s;
-}
-
-.wa-greeting-close:hover {
-    color: #fff;
-}
-
-.wa-greeting-body {
-    padding: 16px;
-}
-
-.wa-greeting-msg {
-    background: #E8F5E9;
-    border-radius: 0 12px 12px 12px;
-    padding: 12px 14px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #1a1a1a;
-    position: relative;
-    margin-bottom: 12px;
-}
-
-.wa-greeting-msg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -6px;
-    width: 0;
-    height: 0;
-    border-top: 6px solid #E8F5E9;
-    border-left: 6px solid transparent;
-}
-
-.wa-greeting-time {
-    font-size: 10px;
-    color: #8c8c8c;
-    text-align: right;
-    margin-top: 4px;
-}
-
-.wa-greeting-reply {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #f0f0f0;
-    border-radius: 24px;
-    padding: 10px 16px;
-    text-decoration: none;
-    color: #555;
-    font-size: 13px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.wa-greeting-reply:hover {
-    background: #25D366;
-    color: #fff;
-}
-
-.wa-greeting-reply svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-}
-
-/* Dark mode */
-[data-theme="dark"] .wa-greeting-card {
-    background: #1a1a1a;
-}
-
-[data-theme="dark"] .wa-greeting-msg {
-    background: #1E3A2F;
-    color: #e0e0e0;
-}
-
-[data-theme="dark"] .wa-greeting-msg::before {
-    border-top-color: #1E3A2F;
-}
-
-[data-theme="dark"] .wa-greeting-reply {
-    background: #2a2a2a;
-    color: #aaa;
-}
 
 /* ─── FIRST-VISIT DISCOUNT POPUP ─── */
 .promo-overlay {
@@ -947,15 +760,6 @@
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-    .wa-greeting {
-        bottom: 80px;
-        right: 12px;
-    }
-
-    .wa-greeting-card {
-        width: 280px;
-    }
-
     .promo-popup {
         padding: 28px 20px;
     }
@@ -1009,10 +813,6 @@
 }
 
 @media (max-width: 420px) {
-    .wa-greeting-card {
-        width: 260px;
-    }
-
     .promo-popup {
         padding: 24px 16px;
     }

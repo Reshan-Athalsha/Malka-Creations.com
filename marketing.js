@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════
    මල්කා — MARKETING & GROWTH ENGINE
-   GA4, Facebook Pixel, WhatsApp greeting,
+   GA4, Facebook Pixel,
    First-visit discount, Social proof,
    Referral program, Instagram feed
    ═══════════════════════════════════════════════ */
@@ -76,73 +76,7 @@
     checkAndLoadTracking();
 
     /* ─────────────────────────────────────────────
-       4. WHATSAPP GREETING POPUP
-       Chat-like bubble that appears on first session
-       ───────────────────────────────────────────── */
-    function initWAGreeting() {
-        // Show once per session
-        if (sessionStorage.getItem('malka_wa_greeted')) return;
-
-        var now = new Date();
-        var hours = now.getHours();
-        var greeting = hours < 12 ? 'Good morning' : hours < 17 ? 'Good afternoon' : 'Good evening';
-        var timeStr = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-
-        var html =
-            '<div class="wa-greeting" id="wa-greeting">' +
-            '<div class="wa-greeting-card">' +
-            '<div class="wa-greeting-header">' +
-            '<div class="wa-greeting-avatar">' +
-            '<svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>' +
-            '</div>' +
-            '<div class="wa-greeting-info">' +
-            '<div class="wa-greeting-name">Malka Creations</div>' +
-            '<div class="wa-greeting-status">Online now</div>' +
-            '</div>' +
-            '<button class="wa-greeting-close" id="wa-greeting-close" aria-label="Close">&times;</button>' +
-            '</div>' +
-            '<div class="wa-greeting-body">' +
-            '<div class="wa-greeting-msg">' +
-            greeting + '! 🌿 Welcome to Malka Creations. ' +
-            'Looking for the perfect plant? We\'d love to help you find one! Just send us a message.' +
-            '<div class="wa-greeting-time">' + timeStr + '</div>' +
-            '</div>' +
-            '<a href="https://wa.me/94705845678?text=Hi!%20I%20saw%20your%20plants%20and%20I\'m%20interested.%20Can%20you%20help%20me%20choose?" ' +
-            'target="_blank" rel="noopener" class="wa-greeting-reply">' +
-            '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>' +
-            'Start a chat' +
-            '</a>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
-
-        document.body.insertAdjacentHTML('beforeend', html);
-
-        var el = document.getElementById('wa-greeting');
-        var closeBtn = document.getElementById('wa-greeting-close');
-
-        setTimeout(function () {
-            if (el) el.classList.add('visible');
-        }, 8000);
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function () {
-                el.classList.remove('visible');
-                sessionStorage.setItem('malka_wa_greeted', '1');
-            });
-        }
-
-        // Auto-hide after 20s
-        setTimeout(function () {
-            if (el && el.classList.contains('visible')) {
-                el.classList.remove('visible');
-                sessionStorage.setItem('malka_wa_greeted', '1');
-            }
-        }, 28000);
-    }
-
-    /* ─────────────────────────────────────────────
-       5. FIRST-TIME VISITOR DISCOUNT POPUP
+       4. FIRST-TIME VISITOR DISCOUNT POPUP
        "10% off with code MALKA10"
        ───────────────────────────────────────────── */
     function initFirstVisitPopup() {
@@ -563,7 +497,6 @@
        INIT ALL MARKETING FEATURES
        ───────────────────────────────────────────── */
     document.addEventListener('DOMContentLoaded', function () {
-        initWAGreeting();
         initFirstVisitPopup();
         initSocialProof();
         initReferralProgram();

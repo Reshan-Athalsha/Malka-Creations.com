@@ -69,13 +69,15 @@
   if(form){
     form.addEventListener('submit',function(e){
       e.preventDefault();
-      var email=form.querySelector('input[type="email"]').value.trim();
+      var inp=form.querySelector('input[type="email"]');
+      if(!inp)return;
+      var email=inp.value.trim();
       if(!email)return;
       var key='malka_newsletter';var list;
       try{list=JSON.parse(localStorage.getItem(key))||[]}catch(x){list=[]}
       if(list.indexOf(email)!==-1){msg(form,'Already subscribed!','success');return}
       list.push(email);localStorage.setItem(key,JSON.stringify(list));
-      form.querySelector('input[type="email"]').value='';
+      inp.value='';
       msg(form,'Thank you for subscribing!','success');
     });
   }

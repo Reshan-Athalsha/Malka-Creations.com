@@ -1,4 +1,10 @@
 ﻿# generate-products.ps1
+# ⚠️  WARNING: This script OVERWRITES all files in the products/ folder.
+# Product pages have been extensively customized by hand. Running this script
+# will DESTROY those customizations. Only run if you want to regenerate all
+# pages from scratch using products.json as the data source.
+# Back up the products/ folder BEFORE running.
+#
 # Generates static HTML product pages with full SEO (JSON-LD, meta tags, canonical URLs)
 # Run from the project root: .\generate-products.ps1
 
