@@ -730,24 +730,160 @@
     });
   }
 
-  /* ─── COOKIE CONSENT ─── */
+  /* ─── COOKIE CONSENT & MANAGEMENT ─── */
   function initCookieConsent() {
-    const COOKIE_KEY = 'malka_cookie_consent';
-    const banner = document.getElementById('cookie-banner');
-    if (!banner) return;
-    if (localStorage.getItem(COOKIE_KEY)) return;
+    const COOKIE_KEY = 'malka_cookie_preferences';
+    const defaults = { essential: true, analytics: false, marketing: false, preferences: false };
 
-    setTimeout(() => banner.classList.add('visible'), 2500);
-
-    const accept = document.getElementById('cookie-accept');
-    const dismiss = document.getElementById('cookie-dismiss');
-
-    function hide() {
-      banner.classList.remove('visible');
-      localStorage.setItem(COOKIE_KEY, 'accepted');
+    function getPrefs() {
+      try { return JSON.parse(localStorage.getItem(COOKIE_KEY)); } catch { return null; }
     }
-    if (accept) accept.addEventListener('click', hide);
-    if (dismiss) dismiss.addEventListener('click', hide);
+    function savePrefs(prefs) {
+      localStorage.setItem(COOKIE_KEY, JSON.stringify(prefs));
+      applyPrefs(prefs);
+    }
+    function applyPrefs(prefs) {
+      window.MalkaCookies = prefs;
+      // Delete cookies for categories that are now off
+      if (!prefs.analytics) deleteCookiesByPrefix('_ga', '_gid', '_gat');
+      if (!prefs.marketing) deleteCookiesByPrefix('_fbp', '_fbc', 'ads_');
+      window.dispatchEvent(new CustomEvent('cookiePrefsChanged', { detail: prefs }));
+    }
+    function deleteCookiesByPrefix() {
+      var prefixes = Array.prototype.slice.call(arguments);
+      document.cookie.split(';').forEach(function(c) {
+        var name = c.split('=')[0].trim();
+        prefixes.forEach(function(p) {
+          if (name.indexOf(p) === 0) {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+          }
+        });
+      });
+    }
+
+    // Inject banner HTML
+    var bannerHTML =
+      '<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">' +
+        '<div class="cookie-inner">' +
+          '<p>We use cookies to improve your experience. You can manage your cookie preferences or accept all cookies.</p>' +
+          '<div class="cookie-actions">' +
+            '<button class="cookie-accept" id="cookie-accept">Accept All</button>' +
+            '<button class="cookie-manage-btn" id="cookie-manage-btn">Manage</button>' +
+            '<button class="cookie-dismiss" id="cookie-dismiss">Reject Non-Essential</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    // Inject modal HTML
+    var modalHTML =
+      '<div class="cookie-overlay" id="cookie-overlay"></div>' +
+      '<div class="cookie-modal" id="cookie-modal" role="dialog" aria-label="Cookie preferences">' +
+        '<div class="cookie-modal-header">' +
+          '<h3>Cookie Preferences</h3>' +
+          '<button class="cookie-modal-close" id="cookie-modal-close" aria-label="Close">&times;</button>' +
+        '</div>' +
+        '<div class="cookie-modal-body">' +
+          '<p class="cookie-modal-desc">Choose which cookies you allow. Essential cookies are required for the website to function and cannot be disabled.</p>' +
+          '<div class="cookie-category">' +
+            '<div class="cookie-cat-header">' +
+              '<div><strong>Essential Cookies</strong><span class="cookie-cat-tag">Always Active</span></div>' +
+            '</div>' +
+            '<p class="cookie-cat-desc">Required for basic site functionality like page navigation, security, and accessibility. These cannot be turned off.</p>' +
+          '</div>' +
+          '<div class="cookie-category">' +
+            '<div class="cookie-cat-header">' +
+              '<label class="cookie-toggle"><input type="checkbox" id="cookie-analytics"><span class="cookie-slider"></span></label>' +
+              '<div><strong>Analytics Cookies</strong></div>' +
+            '</div>' +
+            '<p class="cookie-cat-desc">Help us understand how visitors use our website by collecting anonymous usage data like pages visited and time spent.</p>' +
+          '</div>' +
+          '<div class="cookie-category">' +
+            '<div class="cookie-cat-header">' +
+              '<label class="cookie-toggle"><input type="checkbox" id="cookie-marketing"><span class="cookie-slider"></span></label>' +
+              '<div><strong>Marketing Cookies</strong></div>' +
+            '</div>' +
+            '<p class="cookie-cat-desc">Used to deliver relevant advertisements and track ad campaign performance across websites.</p>' +
+          '</div>' +
+          '<div class="cookie-category">' +
+            '<div class="cookie-cat-header">' +
+              '<label class="cookie-toggle"><input type="checkbox" id="cookie-preferences"><span class="cookie-slider"></span></label>' +
+              '<div><strong>Preference Cookies</strong></div>' +
+            '</div>' +
+            '<p class="cookie-cat-desc">Remember your settings and choices like language, region, and display preferences for a personalised experience.</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="cookie-modal-footer">' +
+          '<button class="cookie-save-prefs" id="cookie-save-prefs">Save Preferences</button>' +
+          '<button class="cookie-accept-all" id="cookie-accept-all-modal">Accept All</button>' +
+        '</div>' +
+      '</div>';
+
+    // Insert into page
+    var container = document.createElement('div');
+    container.id = 'cookie-consent-container';
+    container.innerHTML = bannerHTML + modalHTML;
+    document.body.appendChild(container);
+
+    var banner = document.getElementById('cookie-banner');
+    var modal = document.getElementById('cookie-modal');
+    var overlay = document.getElementById('cookie-overlay');
+
+    function showBanner() { banner.classList.add('visible'); }
+    function hideBanner() { banner.classList.remove('visible'); }
+    function showModal() {
+      var prefs = getPrefs() || defaults;
+      document.getElementById('cookie-analytics').checked = prefs.analytics;
+      document.getElementById('cookie-marketing').checked = prefs.marketing;
+      document.getElementById('cookie-preferences').checked = prefs.preferences;
+      modal.classList.add('visible');
+      overlay.classList.add('visible');
+    }
+    function hideModal() {
+      modal.classList.remove('visible');
+      overlay.classList.remove('visible');
+    }
+    function acceptAll() {
+      var all = { essential: true, analytics: true, marketing: true, preferences: true };
+      savePrefs(all);
+      hideBanner();
+      hideModal();
+    }
+    function rejectNonEssential() {
+      savePrefs({ essential: true, analytics: false, marketing: false, preferences: false });
+      hideBanner();
+      hideModal();
+    }
+    function saveFromModal() {
+      var prefs = {
+        essential: true,
+        analytics: document.getElementById('cookie-analytics').checked,
+        marketing: document.getElementById('cookie-marketing').checked,
+        preferences: document.getElementById('cookie-preferences').checked
+      };
+      savePrefs(prefs);
+      hideBanner();
+      hideModal();
+    }
+
+    // Wire events
+    document.getElementById('cookie-accept').addEventListener('click', acceptAll);
+    document.getElementById('cookie-dismiss').addEventListener('click', rejectNonEssential);
+    document.getElementById('cookie-manage-btn').addEventListener('click', function() { hideBanner(); showModal(); });
+    document.getElementById('cookie-modal-close').addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
+    document.getElementById('cookie-save-prefs').addEventListener('click', saveFromModal);
+    document.getElementById('cookie-accept-all-modal').addEventListener('click', acceptAll);
+
+    // Expose global API to reopen cookie settings
+    window.openCookieSettings = function() { showModal(); };
+
+    // Initial state
+    var existing = getPrefs();
+    if (existing) {
+      applyPrefs(existing);
+    } else {
+      setTimeout(showBanner, 2500);
+    }
   }
 
   /* ─── AUTO "NEW" BADGE ─── */

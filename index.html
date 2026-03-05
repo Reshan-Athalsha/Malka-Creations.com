@@ -11,8 +11,7 @@
   <meta name="description"
     content="Beautiful flower plants in uniquely decorated pots, plus handcrafted creative creations. We turn ordinary pots into extraordinary homes for your plants. Made with love in Sri Lanka by මල්කා මල් පැල & Creations.">
   <!-- Open Graph -->
-  <meta property="og:title"
-    content="මල්කා මල් පැල & Creations — Beautiful Flower Plants & Unique Creations">
+  <meta property="og:title" content="මල්කා මල් පැල & Creations — Beautiful Flower Plants & Unique Creations">
   <meta property="og:description"
     content="Beautiful flower plants in uniquely decorated pots, plus handcrafted creative creations. Made with love in Homagama, Sri Lanka.">
   <meta property="og:image" content="https://www.malka-creations.lk/assets/opt/f1.webp">
@@ -72,7 +71,12 @@
           "bestRating": "5",
           "worstRating": "1"
         },
-        "sameAs": ["https://wa.me/94705845678"]
+        "sameAs": [
+          "https://wa.me/94705845678",
+          "https://www.instagram.com/malka_creations_lk/",
+          "https://www.facebook.com/malka.creations.lk",
+          "https://g.page/malka-creations"
+        ]
       },
       {
         "@type": "WebSite",
@@ -87,9 +91,12 @@
   </script>
   <!-- Analytics -->
   <script defer data-domain="malka-creations.lk" src="https://plausible.io/js/script.js"></script>
+  <!-- GA4 & Facebook Pixel are loaded dynamically by marketing.js after cookie consent -->
   <!-- Preload critical assets -->
   <link rel="preload" as="image" type="image/webp" href="assets/opt/logo.webp">
   <link rel="stylesheet" href="styles.css">
+  <!-- Marketing styles (loaded after main styles) -->
+  <link rel="stylesheet" href="marketing.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Trimmed font weights: only load what we actually use -->
@@ -159,7 +166,11 @@
       <a href="#reach" class="nav-contact">Say Hello</a>
     </nav>
     <button class="nav-search-btn" id="nav-search-btn" aria-label="Search products">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
     </button>
     <button class="wishlist-nav-btn" id="wishlist-nav-btn" aria-label="Wishlist">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -169,8 +180,15 @@
       <span class="wishlist-count" id="wishlist-count">0</span>
     </button>
     <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
-      <svg class="dt-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <svg class="dt-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="dt-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5" />
+        <path
+          d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+      <svg class="dt-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
     </button>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span><span></span>
@@ -194,921 +212,959 @@
   </div>
 
   <main>
-  <!-- ═══════ HERO ═══════ -->
-  <section class="hero" id="top">
-    <div class="hero-grid">
-      <div class="hero-col hero-left">
-        <div class="hero-badge anim-up">
-          <img src="Fonts/Untitled (5).webp" alt="Handcrafted in Sri Lanka" class="hero-badge-text-img">
-        </div>
-        <h1 class="hero-heading anim-up d2">
-          We turn<br>
-          ordinary pots<br>
-          into <em>extraordinary.</em>
-        </h1>
-        <p class="hero-desc anim-up d3">Beautiful flower plants in uniquely decorated pots, plus one-of-a-kind creative
-          creations. We don't manufacture pots — we take the everyday and make it unforgettable.</p>
-        <div class="hero-actions anim-up d4">
-          <a href="#plants" class="btn-fill">Browse plants</a>
-          <a href="https://wa.me/94705845678?text=Hi!%20I'd%20love%20to%20order.%20Thank%20you." class="btn-wa"
-            target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            </svg>
-            Order via WhatsApp
-          </a>
-        </div>
-        <div class="hero-stats anim-up d5">
-          <div class="stat"><span class="stat-num" data-count="500">0</span><span class="stat-label">happy
-              customers</span></div>
-          <div class="stat"><span class="stat-num">4.9<small>/5</small></span><span class="stat-label">customer
-              rating</span></div>
-        </div>
-      </div>
-      <div class="hero-col hero-right anim-fade">
-        <div class="hero-img-stack">
-
-          <div class="hero-img hero-img-1"><img src="assets/opt/f1.webp" alt="Planted pot with flowers"
-              fetchpriority="high" loading="eager"></div>
-          <div class="hero-img hero-img-2"><img src="assets/opt/f3.webp" alt="Decorated plant pot" loading="eager">
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div class="hero-col hero-left">
+          <div class="hero-badge anim-up">
+            <img src="Fonts/Untitled (5).webp" alt="Handcrafted in Sri Lanka" class="hero-badge-text-img">
           </div>
-          <div class="hero-img hero-img-3"><img src="assets/opt/f12.webp" alt="Creative creation" loading="eager"></div>
-          <img src="Fonts/Untitled (7).webp" alt="අපේ ජනප්‍රියම!"
-            class="hero-handnote hero-handnote-img">
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-indicator"></div>
-    </div>
-  </section>
-
-  <!-- ═══════ MARQUEE ═══════ -->
-  <div class="marquee">
-    <div class="marquee-inner">
-      <span>Flower plants</span><span class="mq-dot"></span>
-      <span>Uniquely decorated pots</span><span class="mq-dot"></span>
-      <span>Creative creations</span><span class="mq-dot"></span>
-      <span>Island-wide delivery</span><span class="mq-dot"></span>
-      <span>Custom designs</span><span class="mq-dot"></span>
-      <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
-      <span>Flower plants</span><span class="mq-dot"></span>
-      <span>Uniquely decorated pots</span><span class="mq-dot"></span>
-      <span>Creative creations</span><span class="mq-dot"></span>
-      <span>Island-wide delivery</span><span class="mq-dot"></span>
-      <span>Custom designs</span><span class="mq-dot"></span>
-      <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
-      <span>Flower plants</span><span class="mq-dot"></span>
-      <span>Uniquely decorated pots</span><span class="mq-dot"></span>
-      <span>Creative creations</span><span class="mq-dot"></span>
-      <span>Island-wide delivery</span><span class="mq-dot"></span>
-      <span>Custom designs</span><span class="mq-dot"></span>
-      <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
-      <span>Flower plants</span><span class="mq-dot"></span>
-      <span>Uniquely decorated pots</span><span class="mq-dot"></span>
-      <span>Creative creations</span><span class="mq-dot"></span>
-      <span>Island-wide delivery</span><span class="mq-dot"></span>
-      <span>Custom designs</span><span class="mq-dot"></span>
-      <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
-    </div>
-  </div>
-
-  <!-- ═══════ STORY ═══════ -->
-  <section class="story" id="story">
-    <div class="container">
-      <div class="story-layout">
-        <div class="story-visual reveal-el">
-          <div class="story-photo">
-            <img src="assets/opt/f4.webp" alt="Artisan at work" loading="lazy" decoding="async">
-          </div>
-          <div class="story-photo-accent">
-            <img src="assets/opt/f2.webp" alt="Clay detail" loading="lazy" decoding="async">
-          </div>
-          <img src="Fonts/Untitled (6).webp" alt="every piece is unique" class="story-note story-note-img">
-        </div>
-        <div class="story-text">
-<h2 class="editorial-heading reveal-el">
-            We don't make pots.<br>
-            We make ordinary pots<br>
-            <em>come alive.</em>
-          </h2>
-          <div class="story-body reveal-el">
-            <p><strong>මල්කා මල් පැල & Creations</strong> is about two things we love: beautiful
-              flower plants and the art of making things unique. We take regular, everyday pots and transform them into
-              one-of-a-kind pieces through hand-painting and creative decoration.</p>
-            <p>But that's only half the story. We're also in the business of flower plants — growing, nurturing, and
-              pairing them with the perfect decorated pot. And our creative creations? They're something else entirely
-              — unique handmade pieces born from pure imagination.</p>
-          </div>
-          <div class="story-proof reveal-el">
-            <div class="proof-item">
-              <div class="proof-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <span>Ordinary pots made extraordinary</span>
-            </div>
-            <div class="proof-item">
-              <div class="proof-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <span>Healthy, hand-picked flower plants</span>
-            </div>
-            <div class="proof-item">
-              <div class="proof-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <span>Unique creative creations</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ PLANTS ═══════ -->
-  <section class="collection" id="plants">
-    <div class="container">
-      <div class="collection-header">
-<h2 class="editorial-heading reveal-el">Flower plants.</h2>
-        <p class="collection-sub reveal-el">Beautiful flower plants in uniquely decorated pots. Each pot is hand-painted
-          and one of a kind.<br><span class="handnote">find your perfect plant ↓</span></p>
-      </div>
-
-      <!-- Search Bar -->
-      <div class="search-bar reveal-el" id="search-bar">
-        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.35-4.35" />
-        </svg>
-        <input type="text" id="search-input" placeholder="Search plants & creations..." autocomplete="off" aria-label="Search plants and creations">
-        <button class="search-clear" id="search-clear" aria-label="Clear search">&times;</button>
-      </div>
-
-      <div class="controls-row reveal-el">
-        <div class="filter-row">
-          <button class="filter active" data-filter="all">Everything</button>
-          <button class="filter" data-filter="bestseller">Best Sellers</button>
-          <button class="filter" data-filter="new">New In</button>
-          <button class="filter" data-filter="premium">Premium</button>
-        </div>
-        <div class="sort-wrap">
-          <label for="sort-select" class="sr-only">Sort products</label>
-          <select class="sort-select" id="sort-select">
-            <option value="default">Sort by</option>
-            <option value="price-asc">Price: Low → High</option>
-            <option value="price-desc">Price: High → Low</option>
-            <option value="popular">Most Popular</option>
-            <option value="newest">Newest First</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Price Range Slider -->
-      <div class="price-slider-wrap reveal-el" id="price-slider-wrap">
-        <div class="price-slider-labels">
-          <span>Price Range:</span>
-          <span class="price-slider-values"><span id="price-min-val">Rs. 1,000</span> — <span id="price-max-val">Rs.
-              3,500</span></span>
-        </div>
-        <div class="price-slider" id="price-slider">
-          <div class="price-slider-track" id="price-slider-track"></div>
-          <input type="range" id="price-min" min="1000" max="3500" value="1000" step="100" aria-label="Minimum price">
-          <input type="range" id="price-max" min="1000" max="3500" value="3500" step="100" aria-label="Maximum price">
-        </div>
-      </div>
-
-      <div class="grid" id="plants-grid">
-        <div class="card card-lg" data-cat="bestseller">
-          <a href="products/blooming-anthurium.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f1.webp" alt="Blooming Anthurium" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Best Seller</span></div>
-            <div class="card-body">
-              <h3>Blooming Anthurium</h3>
-              <p>Lush anthurium in a hand-painted terracotta pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,500</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="new">
-          <a href="products/rose-garden-planter.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f2.webp" alt="Rose Garden Planter" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Rose Garden Planter</h3>
-              <p>Miniature rose bush in a botanical-decorated pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,800</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/orchid-blush.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f3.webp" alt="Orchid Blush" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Popular</span></div>
-            <div class="card-body">
-              <h3>Orchid Blush</h3>
-              <p>Elegant orchid in a coral and blush-toned pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,200</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="premium">
-          <a href="products/jasmine-dream.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f4.webp" alt="Jasmine Dream" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Premium</span></div>
-            <div class="card-body">
-              <h3>Jasmine Dream</h3>
-              <p>Fragrant jasmine in a uniquely adorned clay pot.</p>
-              <div class="card-foot"><span class="price">Rs. 2,200</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg" data-cat="new">
-          <a href="products/spring-garden.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f6.webp" alt="Spring Garden" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Spring Garden</h3>
-              <p>Lush greenery in a vibrant hand-painted nature planter.</p>
-              <div class="card-foot"><span class="price">Rs. 1,600</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/sunset-frangipani.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f7.webp" alt="Sunset Frangipani" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Best Seller</span></div>
-            <div class="card-body">
-              <h3>Sunset Frangipani</h3>
-              <p>Classic frangipani in a sunset-gradient decorated pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,400</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="premium">
-          <a href="products/heritage-hibiscus.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f5.webp" alt="Heritage Hibiscus" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Premium</span></div>
-            <div class="card-body">
-              <h3>Heritage Hibiscus</h3>
-              <p>Vibrant hibiscus in a pot with traditional Sri Lankan motifs.</p>
-              <div class="card-foot"><span class="price">Rs. 2,500</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="new">
-          <a href="products/royal-marigold.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f8.webp" alt="Royal Marigold" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Royal Marigold</h3>
-              <p>Bright marigolds in an intricately decorated premium pot.</p>
-              <div class="card-foot"><span class="price">Rs. 2,800</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Extra plants (hidden) -->
-      <div class="grid grid-extra plants-extra">
-        <div class="card" data-cat="new">
-          <a href="products/blush-chrysanthemum.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f9.webp" alt="Blush Chrysanthemum" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Blush Chrysanthemum</h3>
-              <p>Soft pink chrysanthemum in a romantic textured pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,350</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg" data-cat="bestseller">
-          <a href="products/crown-succulent.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f10.webp" alt="Crown Succulent" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Popular</span></div>
-            <div class="card-body">
-              <h3>Crown Succulent</h3>
-              <p>Hardy succulents in a crown-styled hand-decorated pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,700</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="premium">
-          <a href="products/emerald-fern.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f11.webp" alt="Emerald Fern" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Premium</span></div>
-            <div class="card-body">
-              <h3>Emerald Fern</h3>
-              <p>Deep green fern in a premium emerald-toned pot.</p>
-              <div class="card-foot"><span class="price">Rs. 2,200</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/tropical-palm.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f13.webp" alt="Tropical Palm" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Best Seller</span></div>
-            <div class="card-body">
-              <h3>Tropical Palm</h3>
-              <p>Lush tropical plant in a golden-accented pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,650</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg" data-cat="premium">
-          <a href="products/golden-orchid.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f14.webp" alt="Golden Orchid" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Exclusive</span></div>
-            <div class="card-body">
-              <h3>Golden Orchid</h3>
-              <p>Stunning orchid in our most premium gold-leaf decorated pot.</p>
-              <div class="card-foot"><span class="price">Rs. 3,200</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="new">
-          <a href="products/zen-bonsai.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f15.webp" alt="Zen Bonsai" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Zen Bonsai</h3>
-              <p>Miniature bonsai in a minimalist decorated pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,900</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/cottage-rose.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f16.webp" alt="Cottage Rose" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Popular</span></div>
-            <div class="card-body">
-              <h3>Cottage Rose</h3>
-              <p>Cottage-style roses in a rustic floral-painted pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,450</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="premium">
-          <a href="products/moon-jasmine.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f17.webp" alt="Moon Jasmine" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Premium</span></div>
-            <div class="card-body">
-              <h3>Moon Jasmine</h3>
-              <p>Night-blooming jasmine in a bronze-finish pot.</p>
-              <div class="card-foot"><span class="price">Rs. 2,600</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg" data-cat="new">
-          <a href="products/moonlit-lily.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f18.webp" alt="Moonlit Lily" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Moonlit Lily</h3>
-              <p>Elegant lily in a shimmery moonlight-inspired pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,750</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/sky-bloom.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f19.webp" alt="Sky Bloom" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Best Seller</span></div>
-            <div class="card-body">
-              <h3>Sky Bloom</h3>
-              <p>Cheerful blooms in an earth-and-sky toned pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,850</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="premium">
-          <a href="products/saffron-dahlia.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f20.webp" alt="Saffron Dahlia" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Exclusive</span></div>
-            <div class="card-body">
-              <h3>Saffron Dahlia</h3>
-              <p>Rich dahlia in a mandala-painted saffron pot.</p>
-              <div class="card-foot"><span class="price">Rs. 2,400</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="new">
-          <a href="products/coral-succulent.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f21.webp" alt="Coral Succulent" loading="lazy" decoding="async"><span
-                class="card-badge badge-new">New</span></div>
-            <div class="card-body">
-              <h3>Coral Succulent</h3>
-              <p>Hardy succulent in an ocean-textured seaside pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,600</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card" data-cat="bestseller">
-          <a href="products/wildflower.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f22.webp" alt="Wildflower" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Popular</span></div>
-            <div class="card-body">
-              <h3>Wildflower</h3>
-              <p>Free-spirited wildflowers in a natural-finish pot.</p>
-              <div class="card-foot"><span class="price">Rs. 1,300</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg" data-cat="premium">
-          <a href="products/royal-heritage-planter.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f23.webp" alt="Royal Heritage Planter" loading="lazy" decoding="async"><span
-                class="card-badge badge-prem">Premium</span></div>
-            <div class="card-body">
-              <h3>Royal Heritage Planter</h3>
-              <p>Our masterwork. Finest arrangement in a gold-finished royal pot.</p>
-              <div class="card-foot"><span class="price">Rs. 3,500</span><span class="card-cta">View details →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="load-wrap reveal-el">
-        <button class="btn-load plants-load-more">Show all 22 plants
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ CREATIONS ═══════ -->
-  <section class="collection" id="creations">
-    <div class="container">
-      <div class="collection-header">
-<h2 class="editorial-heading reveal-el">Creative creations.</h2>
-        <p class="collection-sub reveal-el">One-of-a-kind handmade pieces born from pure imagination. No two are ever
-          alike.<br><span class="handnote">something truly special ↓</span></p>
-      </div>
-
-      <div class="grid creations-grid">
-        <div class="card card-lg">
-          <a href="products/vintage-rose-art.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/f12.webp" alt="Vintage Rose Art" loading="lazy" decoding="async"><span
-                class="card-badge badge-best">Featured</span></div>
-            <div class="card-body">
-              <h3>Vintage Rose Art</h3>
-              <p>Hand-painted vintage rose design on a transformed pot.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/peacock-fantasy.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_3xodh73xodh73xod.webp"
-                alt="Peacock Fantasy" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Peacock Fantasy</h3>
-              <p>Vivid peacock-themed decorative art piece.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/mandala-harmony.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_5ijix35ijix35iji.webp"
-                alt="Mandala Harmony" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Mandala Harmony</h3>
-              <p>Intricate mandala patterns on ceramic.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/ocean-whisper.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_5rp2fw5rp2fw5rp2.webp"
-                alt="Ocean Whisper" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Ocean Whisper</h3>
-              <p>Sea-inspired creative piece with wave textures.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg">
-          <a href="products/forest-spirit.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_62pdd262pdd262pd.webp"
-                alt="Forest Spirit" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Forest Spirit</h3>
-              <p>Nature-themed sculptural decoration.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/sunset-canvas.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_7n80pd7n80pd7n80.webp"
-                alt="Sunset Canvas" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Sunset Canvas</h3>
-              <p>Warm gradient hand-painted art creation.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Extra creations (hidden) -->
-      <div class="grid grid-extra creations-extra">
-        <div class="card">
-          <a href="products/garden-mosaic.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_bo5zyrbo5zyrbo5z.webp"
-                alt="Garden Mosaic" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Garden Mosaic</h3>
-              <p>Mosaic-style creative garden decoration.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg">
-          <a href="products/celestial-dream.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_c0lt0yc0lt0yc0lt.webp"
-                alt="Celestial Dream" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Celestial Dream</h3>
-              <p>Stars and moon themed decorative piece.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/tropical-art.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_eo29xmeo29xmeo29.webp"
-                alt="Tropical Art" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Tropical Art</h3>
-              <p>Exotic hand-painted tropical art piece.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/heritage-pattern.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_fe5nzqfe5nzqfe5n.webp"
-                alt="Heritage Pattern" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Heritage Pattern</h3>
-              <p>Traditional Sri Lankan design patterns.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg">
-          <a href="products/blossom-art.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_g7mgylg7mgylg7mg.webp" alt="Blossom Art"
-                loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Blossom Art</h3>
-              <p>Cherry blossom themed creative artwork.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/enchanted-forest.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_i6o3gii6o3gii6o3.webp"
-                alt="Enchanted Forest" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Enchanted Forest</h3>
-              <p>Magical forest-inspired decorative creation.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/golden-hour.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_j806gyj806gyj806.webp" alt="Golden Hour"
-                loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Golden Hour</h3>
-              <p>Warm gold-toned creative piece.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card card-lg">
-          <a href="products/ceramic-symphony.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_lzyvt7lzyvt7lzyv.webp"
-                alt="Ceramic Symphony" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Ceramic Symphony</h3>
-              <p>Multi-coloured harmonious decoration.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/floral-tapestry.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_relm19relm19relm.webp"
-                alt="Floral Tapestry" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Floral Tapestry</h3>
-              <p>Intricate floral tapestry design.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/spirit-garden.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_rxjhg5rxjhg5rxjh.webp"
-                alt="Spirit Garden" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Spirit Garden</h3>
-              <p>Zen-inspired creative garden piece.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="products/mystic-bloom.html" class="card-link">
-            <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_t9jwjbt9jwjbt9jw.webp"
-                alt="Mystic Bloom" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <h3>Mystic Bloom</h3>
-              <p>Enchanting floral creation, mysterious and beautiful.</p>
-              <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
-                  →</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="load-wrap reveal-el">
-        <button class="btn-load creations-load-more">Show all 17 creations
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ PULL QUOTE ═══════ -->
-  <section class="pullquote">
-    <div class="container">
-      <blockquote class="pq reveal-el">
-        <span class="pq-mark">"</span>
-        We take the ordinary<br>and make it <em>unforgettable.</em>
-        <span class="pq-mark">"</span>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ═══════ GALLERY ═══════ -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="gallery-header">
-<h2 class="editorial-heading reveal-el">Look closer.</h2>
-      </div>
-      <div class="mosaic">
-        <div class="mosaic-item mi-tall reveal-el" data-lb><img src="assets/opt/f4.webp" alt="Flower plant"
-            loading="lazy" decoding="async"></div>
-        <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f12.webp" alt="Creative creation"
-            loading="lazy" decoding="async"></div>
-        <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f10.webp" alt="Flower plant" loading="lazy" decoding="async">
-        </div>
-        <div class="mosaic-item mi-wide reveal-el" data-lb><img
-            src="assets/opt/Gemini_Generated_Image_62pdd262pdd262pd.webp" alt="Creative creation" loading="lazy" decoding="async"></div>
-        <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f14.webp" alt="Flower plant" loading="lazy" decoding="async">
-        </div>
-        <div class="mosaic-item mi-tall reveal-el" data-lb><img
-            src="assets/opt/Gemini_Generated_Image_g7mgylg7mgylg7mg.webp" alt="Creative creation" loading="lazy" decoding="async"></div>
-        <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f20.webp" alt="Flower plant" loading="lazy" decoding="async">
-        </div>
-        <div class="mosaic-item mi-wide reveal-el" data-lb><img src="assets/opt/f23.webp" alt="Flower plant"
-            loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ VOICES ═══════ -->
-  <section class="voices" id="voices">
-    <div class="container">
-<h2 class="editorial-heading reveal-el">What people say.</h2>
-      <div class="voice-grid">
-        <div class="voice-card reveal-el">
-          <div class="vc-rating">★★★★★</div>
-          <p class="vc-text">"The Blooming Anthurium is absolutely stunning! The decorated pot makes it a real
-            centrepiece. My balcony has never looked better."</p>
-          <div class="vc-who"><strong>Nethmi P.</strong><span>Colombo</span></div>
-        </div>
-        <div class="voice-card vc-featured reveal-el">
-          <div class="vc-rating">★★★★★</div>
-          <p class="vc-text">"I ordered a custom creation for my mother's birthday and she cried with happiness. The
-            detail and love in every piece is incredible — truly one of a kind."</p>
-          <div class="vc-who"><strong>Kavindu S.</strong><span>Kandy</span></div>
-        </div>
-        <div class="voice-card reveal-el">
-          <div class="vc-rating">★★★★★</div>
-          <p class="vc-text">"I've bought plants from many places, but nothing compares. The uniquely decorated pots
-            make all the difference. My garden is transformed."</p>
-          <div class="vc-who"><strong>Shenali F.</strong><span>Galle</span></div>
-        </div>
-        <div class="voice-card reveal-el">
-          <div class="vc-rating">★★★★★</div>
-          <p class="vc-text">"Ordered 5 plants for my new house. Every pot was uniquely decorated and perfect. Amazing
-            quality, fast delivery, great communication!"</p>
-          <div class="vc-who"><strong>Dinesh J.</strong><span>Matara</span></div>
-        </div>
-        <div class="voice-card reveal-el">
-          <div class="vc-rating">★★★★★</div>
-          <p class="vc-text">"Best gift I've ever given. My friend absolutely loved her custom creation. The Malka team
-            went above and beyond!"</p>
-          <div class="vc-who"><strong>Amaya W.</strong><span>Negombo</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ PLANT QUIZ CTA ═══════ -->
-  <section class="quiz-cta">
-    <div class="container">
-      <div class="quiz-cta-inner reveal-el">
-        <div class="quiz-cta-content">
-          <span class="ip-eyebrow">30-Second Quiz</span>
-          <h2 class="quiz-cta-heading">Not sure which plant<br>is right for you?</h2>
-          <p class="quiz-cta-desc">Answer 4 quick questions and we'll recommend the perfect plant — matched to your experience, space, and budget.</p>
-          <a href="quiz.html" class="btn-fill quiz-cta-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c-4 4-9.5 4-9.5 4S4 8 8 4s9 4 9 4z"/><path d="M7.5 12L12 16.5"/><path d="M12 22V8"/></svg>
-            Take the Plant Quiz
-          </a>
-        </div>
-        <div class="quiz-cta-visual">
-          <div class="quiz-cta-cards">
-            <img src="assets/opt/f1.webp" alt="Blooming Anthurium" class="quiz-cta-card qcc-1" loading="lazy" decoding="async">
-            <img src="assets/opt/f4.webp" alt="Jasmine Dream" class="quiz-cta-card qcc-2" loading="lazy" decoding="async">
-            <img src="assets/opt/f10.webp" alt="Crown Succulent" class="quiz-cta-card qcc-3" loading="lazy" decoding="async">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ AS SEEN IN ═══════ -->
-  <section class="seen-in">
-    <div class="container">
-      <p class="seen-in-label reveal-el">Trusted & featured by</p>
-      <div class="seen-in-logos reveal-el">
-        <div class="seen-in-logo">
-          <svg viewBox="0 0 120 40" fill="currentColor"><rect x="10" y="8" width="100" height="4" rx="2" opacity=".3"/><text x="60" y="30" text-anchor="middle" font-size="12" font-weight="600" opacity=".6">Daily Mirror</text></svg>
-        </div>
-        <div class="seen-in-logo">
-          <svg viewBox="0 0 120 40" fill="currentColor"><rect x="10" y="8" width="100" height="4" rx="2" opacity=".3"/><text x="60" y="30" text-anchor="middle" font-size="12" font-weight="600" opacity=".6">Sunday Times</text></svg>
-        </div>
-        <div class="seen-in-logo">
-          <svg viewBox="0 0 120 40" fill="currentColor"><rect x="10" y="8" width="100" height="4" rx="2" opacity=".3"/><text x="60" y="30" text-anchor="middle" font-size="12" font-weight="600" opacity=".6">Colombo Gazette</text></svg>
-        </div>
-        <div class="seen-in-logo">
-          <svg viewBox="0 0 120 40" fill="currentColor"><rect x="10" y="8" width="100" height="4" rx="2" opacity=".3"/><text x="60" y="30" text-anchor="middle" font-size="12" font-weight="600" opacity=".6">Roar Media</text></svg>
-        </div>
-        <div class="seen-in-logo">
-          <svg viewBox="0 0 120 40" fill="currentColor"><rect x="10" y="8" width="100" height="4" rx="2" opacity=".3"/><text x="60" y="30" text-anchor="middle" font-size="12" font-weight="600" opacity=".6">LK Wedding</text></svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ CTA ═══════ -->
-  <section class="cta">
-    <div class="container">
-      <div class="cta-inner reveal-el">
-        <h2 class="cta-heading">Want one of<br>these for yourself?</h2>
-        <p class="cta-desc">Just send us a message. We'll help you find the perfect flower plant, pick a uniquely
-          decorated pot, or create something completely custom.</p>
-        <div class="cta-actions">
-          <a href="https://wa.me/94705845678?text=Hi!%20I'd%20love%20to%20order.%20Thank%20you."
-            class="btn-wa btn-wa-lg" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            </svg>
-            Chat on WhatsApp
-          </a>
-          <a href="#reach" class="btn-ghost">Or send us a note</a>
-        </div>
-        <span class="handnote cta-note">we reply within 30 minutes ↑</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ REACH ═══════ -->
-  <section class="reach" id="reach">
-    <div class="container">
-      <div class="reach-layout">
-        <div class="reach-info reveal-el">
-<h2 class="editorial-heading">Say hello.</h2>
-          <p class="reach-desc">We love hearing from you. Whether it's a custom order, a question, or just to say hi —
-            reach out anytime.</p>
-          <div class="reach-details">
-            <div class="rd"><span class="rd-label">Location</span><span class="rd-value">Homagama, Sri Lanka</span>
-            </div>
-            <div class="rd"><span class="rd-label">Phone</span><span class="rd-value">070 584 5678</span></div>
-            <div class="rd"><span class="rd-label">Email</span><span class="rd-value">reshan@malka-creations.com</span>
-            </div>
-            <div class="rd"><span class="rd-label">Hours</span><span class="rd-value">Mon – Sat, 9am – 6pm</span>
-            </div>
-          </div>
-          <div class="reach-socials">
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" width="20" height="20">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg></a>
-            <a href="https://wa.me/94705845678" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
-                viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <h1 class="hero-heading anim-up d2">
+            We turn<br>
+            ordinary pots<br>
+            into <em>extraordinary.</em>
+          </h1>
+          <p class="hero-desc anim-up d3">Beautiful flower plants in uniquely decorated pots, plus one-of-a-kind
+            creative
+            creations. We don't manufacture pots — we take the everyday and make it unforgettable.</p>
+          <div class="hero-actions anim-up d4">
+            <a href="#plants" class="btn-fill">Browse plants</a>
+            <a href="https://wa.me/94705845678?text=Hi!%20I'd%20love%20to%20order.%20Thank%20you." class="btn-wa"
+              target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.637-1.467A11.932 11.932 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
-              </svg></a>
-            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path
-                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.35a8.28 8.28 0 0 0 4.76 1.5V6.41a4.85 4.85 0 0 1-1-.28z" />
-              </svg></a>
+              </svg>
+              Order via WhatsApp
+            </a>
+          </div>
+          <div class="hero-stats anim-up d5">
+            <div class="stat"><span class="stat-num" data-count="500">0</span><span class="stat-label">happy
+                customers</span></div>
+            <div class="stat"><span class="stat-num">4.9<small>/5</small></span><span class="stat-label">customer
+                rating</span></div>
           </div>
         </div>
-        <div class="reach-form reveal-el">
-          <form id="contact-form">
-            <div class="f-row"><input type="text" name="name" placeholder="Your name *" required aria-label="Your name"><input type="tel"
-                name="phone" placeholder="Phone number" aria-label="Phone number"></div>
-            <input type="email" name="email" placeholder="Email address *" required aria-label="Email address">
-            <input type="text" name="subject" placeholder="What's this about?" aria-label="Subject">
-            <textarea name="message" placeholder="Tell us what you're looking for..." rows="5" required aria-label="Your message"></textarea>
-            <button type="submit" class="btn-fill btn-submit">Send message</button>
-            <p class="form-alt-contact">Or email us directly at <a href="mailto:reshan@malka-creations.com">reshan@malka-creations.com</a></p>
-          </form>
+        <div class="hero-col hero-right anim-fade">
+          <div class="hero-img-stack">
+
+            <div class="hero-img hero-img-1"><img src="assets/opt/f1.webp" alt="Planted pot with flowers"
+                fetchpriority="high" loading="eager"></div>
+            <div class="hero-img hero-img-2"><img src="assets/opt/f3.webp" alt="Decorated plant pot" loading="eager">
+            </div>
+            <div class="hero-img hero-img-3"><img src="assets/opt/f12.webp" alt="Creative creation" loading="eager">
+            </div>
+            <img src="Fonts/Untitled (7).webp" alt="අපේ ජනප්‍රියම!" class="hero-handnote hero-handnote-img">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-scroll">
+        <div class="scroll-indicator"></div>
+      </div>
+    </section>
 
-  <!-- Recently Viewed -->
-  <section class="recently-viewed" id="recently-viewed" style="display:none;">
-    <div class="container">
-      <h3 class="rv-title">Recently Viewed</h3>
-      <div class="rv-scroll" id="rv-scroll"></div>
+    <!-- ═══════ MARQUEE ═══════ -->
+    <div class="marquee">
+      <div class="marquee-inner">
+        <span>Flower plants</span><span class="mq-dot"></span>
+        <span>Uniquely decorated pots</span><span class="mq-dot"></span>
+        <span>Creative creations</span><span class="mq-dot"></span>
+        <span>Island-wide delivery</span><span class="mq-dot"></span>
+        <span>Custom designs</span><span class="mq-dot"></span>
+        <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
+        <span>Flower plants</span><span class="mq-dot"></span>
+        <span>Uniquely decorated pots</span><span class="mq-dot"></span>
+        <span>Creative creations</span><span class="mq-dot"></span>
+        <span>Island-wide delivery</span><span class="mq-dot"></span>
+        <span>Custom designs</span><span class="mq-dot"></span>
+        <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
+        <span>Flower plants</span><span class="mq-dot"></span>
+        <span>Uniquely decorated pots</span><span class="mq-dot"></span>
+        <span>Creative creations</span><span class="mq-dot"></span>
+        <span>Island-wide delivery</span><span class="mq-dot"></span>
+        <span>Custom designs</span><span class="mq-dot"></span>
+        <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
+        <span>Flower plants</span><span class="mq-dot"></span>
+        <span>Uniquely decorated pots</span><span class="mq-dot"></span>
+        <span>Creative creations</span><span class="mq-dot"></span>
+        <span>Island-wide delivery</span><span class="mq-dot"></span>
+        <span>Custom designs</span><span class="mq-dot"></span>
+        <span>Free shipping Rs. 3000+</span><span class="mq-dot"></span>
+      </div>
     </div>
-  </section>
+
+    <!-- ═══════ STORY ═══════ -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="story-layout">
+          <div class="story-visual reveal-el">
+            <div class="story-photo">
+              <img src="assets/opt/f4.webp" alt="Artisan at work" loading="lazy" decoding="async">
+            </div>
+            <div class="story-photo-accent">
+              <img src="assets/opt/f2.webp" alt="Clay detail" loading="lazy" decoding="async">
+            </div>
+            <img src="Fonts/Untitled (6).webp" alt="every piece is unique" class="story-note story-note-img">
+          </div>
+          <div class="story-text">
+            <h2 class="editorial-heading reveal-el">
+              We don't make pots.<br>
+              We make ordinary pots<br>
+              <em>come alive.</em>
+            </h2>
+            <div class="story-body reveal-el">
+              <p><strong>මල්කා මල් පැල & Creations</strong> is about two things we love: beautiful
+                flower plants and the art of making things unique. We take regular, everyday pots and transform them
+                into
+                one-of-a-kind pieces through hand-painting and creative decoration.</p>
+              <p>But that's only half the story. We're also in the business of flower plants — growing, nurturing, and
+                pairing them with the perfect decorated pot. And our creative creations? They're something else entirely
+                — unique handmade pieces born from pure imagination.</p>
+            </div>
+            <div class="story-proof reveal-el">
+              <div class="proof-item">
+                <div class="proof-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <span>Ordinary pots made extraordinary</span>
+              </div>
+              <div class="proof-item">
+                <div class="proof-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <span>Healthy, hand-picked flower plants</span>
+              </div>
+              <div class="proof-item">
+                <div class="proof-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <span>Unique creative creations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PLANTS ═══════ -->
+    <section class="collection" id="plants">
+      <div class="container">
+        <div class="collection-header">
+          <h2 class="editorial-heading reveal-el">Flower plants.</h2>
+          <p class="collection-sub reveal-el">Beautiful flower plants in uniquely decorated pots. Each pot is
+            hand-painted
+            and one of a kind.<br><span class="handnote">find your perfect plant ↓</span></p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar reveal-el" id="search-bar">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input type="text" id="search-input" placeholder="Search plants & creations..." autocomplete="off"
+            aria-label="Search plants and creations">
+          <button class="search-clear" id="search-clear" aria-label="Clear search">&times;</button>
+        </div>
+
+        <div class="controls-row reveal-el">
+          <div class="filter-row">
+            <button class="filter active" data-filter="all">Everything</button>
+            <button class="filter" data-filter="bestseller">Best Sellers</button>
+            <button class="filter" data-filter="new">New In</button>
+            <button class="filter" data-filter="premium">Premium</button>
+          </div>
+          <div class="sort-wrap">
+            <label for="sort-select" class="sr-only">Sort products</label>
+            <select class="sort-select" id="sort-select">
+              <option value="default">Sort by</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="popular">Most Popular</option>
+              <option value="newest">Newest First</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Price Range Slider -->
+        <div class="price-slider-wrap reveal-el" id="price-slider-wrap">
+          <div class="price-slider-labels">
+            <span>Price Range:</span>
+            <span class="price-slider-values"><span id="price-min-val">Rs. 1,000</span> — <span id="price-max-val">Rs.
+                3,500</span></span>
+          </div>
+          <div class="price-slider" id="price-slider">
+            <div class="price-slider-track" id="price-slider-track"></div>
+            <input type="range" id="price-min" min="1000" max="3500" value="1000" step="100" aria-label="Minimum price">
+            <input type="range" id="price-max" min="1000" max="3500" value="3500" step="100" aria-label="Maximum price">
+          </div>
+        </div>
+
+        <div class="grid" id="plants-grid">
+          <div class="card card-lg" data-cat="bestseller">
+            <a href="products/blooming-anthurium.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f1.webp" alt="Blooming Anthurium" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Best Seller</span></div>
+              <div class="card-body">
+                <h3>Blooming Anthurium</h3>
+                <p>Lush anthurium in a hand-painted terracotta pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,500</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="new">
+            <a href="products/rose-garden-planter.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f2.webp" alt="Rose Garden Planter" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Rose Garden Planter</h3>
+                <p>Miniature rose bush in a botanical-decorated pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,800</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/orchid-blush.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f3.webp" alt="Orchid Blush" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Popular</span></div>
+              <div class="card-body">
+                <h3>Orchid Blush</h3>
+                <p>Elegant orchid in a coral and blush-toned pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,200</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="premium">
+            <a href="products/jasmine-dream.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f4.webp" alt="Jasmine Dream" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Premium</span></div>
+              <div class="card-body">
+                <h3>Jasmine Dream</h3>
+                <p>Fragrant jasmine in a uniquely adorned clay pot.</p>
+                <div class="card-foot"><span class="price">Rs. 2,200</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg" data-cat="new">
+            <a href="products/spring-garden.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f6.webp" alt="Spring Garden" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Spring Garden</h3>
+                <p>Lush greenery in a vibrant hand-painted nature planter.</p>
+                <div class="card-foot"><span class="price">Rs. 1,600</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/sunset-frangipani.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f7.webp" alt="Sunset Frangipani" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Best Seller</span></div>
+              <div class="card-body">
+                <h3>Sunset Frangipani</h3>
+                <p>Classic frangipani in a sunset-gradient decorated pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,400</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="premium">
+            <a href="products/heritage-hibiscus.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f5.webp" alt="Heritage Hibiscus" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Premium</span></div>
+              <div class="card-body">
+                <h3>Heritage Hibiscus</h3>
+                <p>Vibrant hibiscus in a pot with traditional Sri Lankan motifs.</p>
+                <div class="card-foot"><span class="price">Rs. 2,500</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="new">
+            <a href="products/royal-marigold.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f8.webp" alt="Royal Marigold" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Royal Marigold</h3>
+                <p>Bright marigolds in an intricately decorated premium pot.</p>
+                <div class="card-foot"><span class="price">Rs. 2,800</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Extra plants (hidden) -->
+        <div class="grid grid-extra plants-extra">
+          <div class="card" data-cat="new">
+            <a href="products/blush-chrysanthemum.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f9.webp" alt="Blush Chrysanthemum" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Blush Chrysanthemum</h3>
+                <p>Soft pink chrysanthemum in a romantic textured pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,350</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg" data-cat="bestseller">
+            <a href="products/crown-succulent.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f10.webp" alt="Crown Succulent" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Popular</span></div>
+              <div class="card-body">
+                <h3>Crown Succulent</h3>
+                <p>Hardy succulents in a crown-styled hand-decorated pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,700</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="premium">
+            <a href="products/emerald-fern.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f11.webp" alt="Emerald Fern" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Premium</span></div>
+              <div class="card-body">
+                <h3>Emerald Fern</h3>
+                <p>Deep green fern in a premium emerald-toned pot.</p>
+                <div class="card-foot"><span class="price">Rs. 2,200</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/tropical-palm.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f13.webp" alt="Tropical Palm" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Best Seller</span></div>
+              <div class="card-body">
+                <h3>Tropical Palm</h3>
+                <p>Lush tropical plant in a golden-accented pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,650</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg" data-cat="premium">
+            <a href="products/golden-orchid.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f14.webp" alt="Golden Orchid" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Exclusive</span></div>
+              <div class="card-body">
+                <h3>Golden Orchid</h3>
+                <p>Stunning orchid in our most premium gold-leaf decorated pot.</p>
+                <div class="card-foot"><span class="price">Rs. 3,200</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="new">
+            <a href="products/zen-bonsai.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f15.webp" alt="Zen Bonsai" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Zen Bonsai</h3>
+                <p>Miniature bonsai in a minimalist decorated pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,900</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/cottage-rose.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f16.webp" alt="Cottage Rose" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Popular</span></div>
+              <div class="card-body">
+                <h3>Cottage Rose</h3>
+                <p>Cottage-style roses in a rustic floral-painted pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,450</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="premium">
+            <a href="products/moon-jasmine.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f17.webp" alt="Moon Jasmine" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Premium</span></div>
+              <div class="card-body">
+                <h3>Moon Jasmine</h3>
+                <p>Night-blooming jasmine in a bronze-finish pot.</p>
+                <div class="card-foot"><span class="price">Rs. 2,600</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg" data-cat="new">
+            <a href="products/moonlit-lily.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f18.webp" alt="Moonlit Lily" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Moonlit Lily</h3>
+                <p>Elegant lily in a shimmery moonlight-inspired pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,750</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/sky-bloom.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f19.webp" alt="Sky Bloom" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Best Seller</span></div>
+              <div class="card-body">
+                <h3>Sky Bloom</h3>
+                <p>Cheerful blooms in an earth-and-sky toned pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,850</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="premium">
+            <a href="products/saffron-dahlia.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f20.webp" alt="Saffron Dahlia" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Exclusive</span></div>
+              <div class="card-body">
+                <h3>Saffron Dahlia</h3>
+                <p>Rich dahlia in a mandala-painted saffron pot.</p>
+                <div class="card-foot"><span class="price">Rs. 2,400</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="new">
+            <a href="products/coral-succulent.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f21.webp" alt="Coral Succulent" loading="lazy"
+                  decoding="async"><span class="card-badge badge-new">New</span></div>
+              <div class="card-body">
+                <h3>Coral Succulent</h3>
+                <p>Hardy succulent in an ocean-textured seaside pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,600</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-cat="bestseller">
+            <a href="products/wildflower.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f22.webp" alt="Wildflower" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Popular</span></div>
+              <div class="card-body">
+                <h3>Wildflower</h3>
+                <p>Free-spirited wildflowers in a natural-finish pot.</p>
+                <div class="card-foot"><span class="price">Rs. 1,300</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg" data-cat="premium">
+            <a href="products/royal-heritage-planter.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f23.webp" alt="Royal Heritage Planter" loading="lazy"
+                  decoding="async"><span class="card-badge badge-prem">Premium</span></div>
+              <div class="card-body">
+                <h3>Royal Heritage Planter</h3>
+                <p>Our masterwork. Finest arrangement in a gold-finished royal pot.</p>
+                <div class="card-foot"><span class="price">Rs. 3,500</span><span class="card-cta">View details →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="load-wrap reveal-el">
+          <button class="btn-load plants-load-more">Show all 22 plants
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CREATIONS ═══════ -->
+    <section class="collection" id="creations">
+      <div class="container">
+        <div class="collection-header">
+          <h2 class="editorial-heading reveal-el">Creative creations.</h2>
+          <p class="collection-sub reveal-el">One-of-a-kind handmade pieces born from pure imagination. No two are ever
+            alike.<br><span class="handnote">something truly special ↓</span></p>
+        </div>
+
+        <div class="grid creations-grid">
+          <div class="card card-lg">
+            <a href="products/vintage-rose-art.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/f12.webp" alt="Vintage Rose Art" loading="lazy"
+                  decoding="async"><span class="card-badge badge-best">Featured</span></div>
+              <div class="card-body">
+                <h3>Vintage Rose Art</h3>
+                <p>Hand-painted vintage rose design on a transformed pot.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/peacock-fantasy.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_3xodh73xodh73xod.webp"
+                  alt="Peacock Fantasy" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Peacock Fantasy</h3>
+                <p>Vivid peacock-themed decorative art piece.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/mandala-harmony.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_5ijix35ijix35iji.webp"
+                  alt="Mandala Harmony" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Mandala Harmony</h3>
+                <p>Intricate mandala patterns on ceramic.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/ocean-whisper.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_5rp2fw5rp2fw5rp2.webp"
+                  alt="Ocean Whisper" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Ocean Whisper</h3>
+                <p>Sea-inspired creative piece with wave textures.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg">
+            <a href="products/forest-spirit.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_62pdd262pdd262pd.webp"
+                  alt="Forest Spirit" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Forest Spirit</h3>
+                <p>Nature-themed sculptural decoration.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/sunset-canvas.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_7n80pd7n80pd7n80.webp"
+                  alt="Sunset Canvas" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Sunset Canvas</h3>
+                <p>Warm gradient hand-painted art creation.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Extra creations (hidden) -->
+        <div class="grid grid-extra creations-extra">
+          <div class="card">
+            <a href="products/garden-mosaic.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_bo5zyrbo5zyrbo5z.webp"
+                  alt="Garden Mosaic" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Garden Mosaic</h3>
+                <p>Mosaic-style creative garden decoration.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg">
+            <a href="products/celestial-dream.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_c0lt0yc0lt0yc0lt.webp"
+                  alt="Celestial Dream" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Celestial Dream</h3>
+                <p>Stars and moon themed decorative piece.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/tropical-art.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_eo29xmeo29xmeo29.webp"
+                  alt="Tropical Art" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Tropical Art</h3>
+                <p>Exotic hand-painted tropical art piece.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/heritage-pattern.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_fe5nzqfe5nzqfe5n.webp"
+                  alt="Heritage Pattern" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Heritage Pattern</h3>
+                <p>Traditional Sri Lankan design patterns.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg">
+            <a href="products/blossom-art.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_g7mgylg7mgylg7mg.webp"
+                  alt="Blossom Art" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Blossom Art</h3>
+                <p>Cherry blossom themed creative artwork.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/enchanted-forest.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_i6o3gii6o3gii6o3.webp"
+                  alt="Enchanted Forest" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Enchanted Forest</h3>
+                <p>Magical forest-inspired decorative creation.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/golden-hour.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_j806gyj806gyj806.webp"
+                  alt="Golden Hour" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Golden Hour</h3>
+                <p>Warm gold-toned creative piece.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card card-lg">
+            <a href="products/ceramic-symphony.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_lzyvt7lzyvt7lzyv.webp"
+                  alt="Ceramic Symphony" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Ceramic Symphony</h3>
+                <p>Multi-coloured harmonious decoration.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/floral-tapestry.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_relm19relm19relm.webp"
+                  alt="Floral Tapestry" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Floral Tapestry</h3>
+                <p>Intricate floral tapestry design.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/spirit-garden.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_rxjhg5rxjhg5rxjh.webp"
+                  alt="Spirit Garden" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Spirit Garden</h3>
+                <p>Zen-inspired creative garden piece.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="products/mystic-bloom.html" class="card-link">
+              <div class="card-media"><img src="assets/opt/Gemini_Generated_Image_t9jwjbt9jwjbt9jw.webp"
+                  alt="Mystic Bloom" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h3>Mystic Bloom</h3>
+                <p>Enchanting floral creation, mysterious and beautiful.</p>
+                <div class="card-foot"><span class="price">Price on request</span><span class="card-cta">View details
+                    →</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="load-wrap reveal-el">
+          <button class="btn-load creations-load-more">Show all 17 creations
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PULL QUOTE ═══════ -->
+    <section class="pullquote">
+      <div class="container">
+        <blockquote class="pq reveal-el">
+          <span class="pq-mark">"</span>
+          We take the ordinary<br>and make it <em>unforgettable.</em>
+          <span class="pq-mark">"</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════ GALLERY ═══════ -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery-header">
+          <h2 class="editorial-heading reveal-el">Look closer.</h2>
+        </div>
+        <div class="mosaic">
+          <div class="mosaic-item mi-tall reveal-el" data-lb><img src="assets/opt/f4.webp" alt="Flower plant"
+              loading="lazy" decoding="async"></div>
+          <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f12.webp" alt="Creative creation"
+              loading="lazy" decoding="async"></div>
+          <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f10.webp" alt="Flower plant" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="mosaic-item mi-wide reveal-el" data-lb><img
+              src="assets/opt/Gemini_Generated_Image_62pdd262pdd262pd.webp" alt="Creative creation" loading="lazy"
+              decoding="async"></div>
+          <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f14.webp" alt="Flower plant" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="mosaic-item mi-tall reveal-el" data-lb><img
+              src="assets/opt/Gemini_Generated_Image_g7mgylg7mgylg7mg.webp" alt="Creative creation" loading="lazy"
+              decoding="async"></div>
+          <div class="mosaic-item reveal-el" data-lb><img src="assets/opt/f20.webp" alt="Flower plant" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="mosaic-item mi-wide reveal-el" data-lb><img src="assets/opt/f23.webp" alt="Flower plant"
+              loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ VOICES ═══════ -->
+    <section class="voices" id="voices">
+      <div class="container">
+        <h2 class="editorial-heading reveal-el">What people say.</h2>
+        <div class="voice-grid">
+          <div class="voice-card reveal-el">
+            <div class="vc-rating">★★★★★</div>
+            <p class="vc-text">"The Blooming Anthurium is absolutely stunning! The decorated pot makes it a real
+              centrepiece. My balcony has never looked better."</p>
+            <div class="vc-who"><strong>Nethmi P.</strong><span>Colombo</span></div>
+          </div>
+          <div class="voice-card vc-featured reveal-el">
+            <div class="vc-rating">★★★★★</div>
+            <p class="vc-text">"I ordered a custom creation for my mother's birthday and she cried with happiness. The
+              detail and love in every piece is incredible — truly one of a kind."</p>
+            <div class="vc-who"><strong>Kavindu S.</strong><span>Kandy</span></div>
+          </div>
+          <div class="voice-card reveal-el">
+            <div class="vc-rating">★★★★★</div>
+            <p class="vc-text">"I've bought plants from many places, but nothing compares. The uniquely decorated pots
+              make all the difference. My garden is transformed."</p>
+            <div class="vc-who"><strong>Shenali F.</strong><span>Galle</span></div>
+          </div>
+          <div class="voice-card reveal-el">
+            <div class="vc-rating">★★★★★</div>
+            <p class="vc-text">"Ordered 5 plants for my new house. Every pot was uniquely decorated and perfect. Amazing
+              quality, fast delivery, great communication!"</p>
+            <div class="vc-who"><strong>Dinesh J.</strong><span>Matara</span></div>
+          </div>
+          <div class="voice-card reveal-el">
+            <div class="vc-rating">★★★★★</div>
+            <p class="vc-text">"Best gift I've ever given. My friend absolutely loved her custom creation. The Malka
+              team
+              went above and beyond!"</p>
+            <div class="vc-who"><strong>Amaya W.</strong><span>Negombo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PLANT QUIZ CTA ═══════ -->
+    <section class="quiz-cta">
+      <div class="container">
+        <div class="quiz-cta-inner reveal-el">
+          <div class="quiz-cta-content">
+            <span class="ip-eyebrow">30-Second Quiz</span>
+            <h2 class="quiz-cta-heading">Not sure which plant<br>is right for you?</h2>
+            <p class="quiz-cta-desc">Answer 4 quick questions and we'll recommend the perfect plant — matched to your
+              experience, space, and budget.</p>
+            <a href="quiz.html" class="btn-fill quiz-cta-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8c-4 4-9.5 4-9.5 4S4 8 8 4s9 4 9 4z" />
+                <path d="M7.5 12L12 16.5" />
+                <path d="M12 22V8" />
+              </svg>
+              Take the Plant Quiz
+            </a>
+          </div>
+          <div class="quiz-cta-visual">
+            <div class="quiz-cta-cards">
+              <img src="assets/opt/f1.webp" alt="Blooming Anthurium" class="quiz-cta-card qcc-1" loading="lazy"
+                decoding="async">
+              <img src="assets/opt/f4.webp" alt="Jasmine Dream" class="quiz-cta-card qcc-2" loading="lazy"
+                decoding="async">
+              <img src="assets/opt/f10.webp" alt="Crown Succulent" class="quiz-cta-card qcc-3" loading="lazy"
+                decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ AS SEEN IN ═══════ -->
+    <section class="seen-in">
+      <div class="container">
+        <p class="seen-in-label reveal-el">Trusted & featured by</p>
+        <div class="seen-in-logos reveal-el">
+          <div class="seen-in-logo">
+            <svg viewBox="0 0 120 40" fill="currentColor">
+              <rect x="10" y="8" width="100" height="4" rx="2" opacity=".3" /><text x="60" y="30" text-anchor="middle"
+                font-size="12" font-weight="600" opacity=".6">Daily Mirror</text>
+            </svg>
+          </div>
+          <div class="seen-in-logo">
+            <svg viewBox="0 0 120 40" fill="currentColor">
+              <rect x="10" y="8" width="100" height="4" rx="2" opacity=".3" /><text x="60" y="30" text-anchor="middle"
+                font-size="12" font-weight="600" opacity=".6">Sunday Times</text>
+            </svg>
+          </div>
+          <div class="seen-in-logo">
+            <svg viewBox="0 0 120 40" fill="currentColor">
+              <rect x="10" y="8" width="100" height="4" rx="2" opacity=".3" /><text x="60" y="30" text-anchor="middle"
+                font-size="12" font-weight="600" opacity=".6">Colombo Gazette</text>
+            </svg>
+          </div>
+          <div class="seen-in-logo">
+            <svg viewBox="0 0 120 40" fill="currentColor">
+              <rect x="10" y="8" width="100" height="4" rx="2" opacity=".3" /><text x="60" y="30" text-anchor="middle"
+                font-size="12" font-weight="600" opacity=".6">Roar Media</text>
+            </svg>
+          </div>
+          <div class="seen-in-logo">
+            <svg viewBox="0 0 120 40" fill="currentColor">
+              <rect x="10" y="8" width="100" height="4" rx="2" opacity=".3" /><text x="60" y="30" text-anchor="middle"
+                font-size="12" font-weight="600" opacity=".6">LK Wedding</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CTA ═══════ -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner reveal-el">
+          <h2 class="cta-heading">Want one of<br>these for yourself?</h2>
+          <p class="cta-desc">Just send us a message. We'll help you find the perfect flower plant, pick a uniquely
+            decorated pot, or create something completely custom.</p>
+          <div class="cta-actions">
+            <a href="https://wa.me/94705845678?text=Hi!%20I'd%20love%20to%20order.%20Thank%20you."
+              class="btn-wa btn-wa-lg" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              </svg>
+              Chat on WhatsApp
+            </a>
+            <a href="#reach" class="btn-ghost">Or send us a note</a>
+          </div>
+          <span class="handnote cta-note">we reply within 30 minutes ↑</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ REACH ═══════ -->
+    <section class="reach" id="reach">
+      <div class="container">
+        <div class="reach-layout">
+          <div class="reach-info reveal-el">
+            <h2 class="editorial-heading">Say hello.</h2>
+            <p class="reach-desc">We love hearing from you. Whether it's a custom order, a question, or just to say hi —
+              reach out anytime.</p>
+            <div class="reach-details">
+              <div class="rd"><span class="rd-label">Location</span><span class="rd-value">Homagama, Sri Lanka</span>
+              </div>
+              <div class="rd"><span class="rd-label">Phone</span><span class="rd-value">070 584 5678</span></div>
+              <div class="rd"><span class="rd-label">Email</span><span
+                  class="rd-value">reshan@malka-creations.com</span>
+              </div>
+              <div class="rd"><span class="rd-label">Hours</span><span class="rd-value">Mon – Sat, 9am – 6pm</span>
+              </div>
+            </div>
+            <div class="reach-socials">
+              <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a>
+              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="20" height="20">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg></a>
+              <a href="https://wa.me/94705845678" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+                  viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.637-1.467A11.932 11.932 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                </svg></a>
+              <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.35a8.28 8.28 0 0 0 4.76 1.5V6.41a4.85 4.85 0 0 1-1-.28z" />
+                </svg></a>
+            </div>
+          </div>
+          <div class="reach-form reveal-el">
+            <form id="contact-form">
+              <div class="f-row"><input type="text" name="name" placeholder="Your name *" required
+                  aria-label="Your name"><input type="tel" name="phone" placeholder="Phone number"
+                  aria-label="Phone number"></div>
+              <input type="email" name="email" placeholder="Email address *" required aria-label="Email address">
+              <input type="text" name="subject" placeholder="What's this about?" aria-label="Subject">
+              <textarea name="message" placeholder="Tell us what you're looking for..." rows="5" required
+                aria-label="Your message"></textarea>
+              <button type="submit" class="btn-fill btn-submit">Send message</button>
+              <p class="form-alt-contact">Or email us directly at <a
+                  href="mailto:reshan@malka-creations.com">reshan@malka-creations.com</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed" id="recently-viewed" style="display:none;">
+      <div class="container">
+        <h3 class="rv-title">Recently Viewed</h3>
+        <div class="rv-scroll" id="rv-scroll"></div>
+      </div>
+    </section>
 
   </main>
   <!-- ═══════ FOOTER ═══════ -->
@@ -1128,13 +1184,17 @@
         </div>
         <div class="foot-cols">
           <div class="foot-col">
-            <h5>Navigate</h5><a href="#top">Home</a><a href="#story">Story</a><a href="#plants">Plants</a><a href="#creations">Creations</a>
+            <h5>Navigate</h5><a href="#top">Home</a><a href="#story">Story</a><a href="#plants">Plants</a><a
+              href="#creations">Creations</a>
           </div>
           <div class="foot-col">
-            <h5>Learn</h5><a href="care-guide.html">Plant Care Guide</a><a href="blog.html">Blog</a><a href="gift-guide.html">Gift Guide</a><a href="about.html">About Us</a><a href="quiz.html">Plant Quiz</a>
+            <h5>Learn</h5><a href="care-guide.html">Plant Care Guide</a><a href="blog.html">Blog</a><a
+              href="gift-guide.html">Gift Guide</a><a href="about.html">About Us</a><a href="quiz.html">Plant Quiz</a>
           </div>
           <div class="foot-col">
-            <h5>Help</h5><a href="faq.html">FAQ</a><a href="delivery.html">Delivery & Pricing</a><a href="https://wa.me/94705845678" target="_blank" rel="noopener">WhatsApp</a><a href="contact.html">Contact</a>
+            <h5>Help</h5><a href="faq.html">FAQ</a><a href="delivery.html">Delivery & Pricing</a><a
+              href="https://wa.me/94705845678" target="_blank" rel="noopener">WhatsApp</a><a
+              href="contact.html">Contact</a>
           </div>
         </div>
       </div>
@@ -1144,7 +1204,8 @@
           <p>Plant care tips, new arrivals & exclusive offers — straight to your inbox.</p>
         </div>
         <form class="newsletter-form" id="newsletter-form">
-          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter" autocomplete="email">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter"
+            autocomplete="email">
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -1166,27 +1227,21 @@
   </div>
   <div class="wishlist-overlay" id="wishlist-overlay"></div>
 
-  <!-- Cookie Consent -->
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
-    <div class="cookie-inner">
-      <p>We use cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</p>
-      <div class="cookie-actions">
-        <button class="cookie-accept" id="cookie-accept">Accept</button>
-        <button class="cookie-dismiss" id="cookie-dismiss">Dismiss</button>
-      </div>
-    </div>
-  </div>
-
 
   <!-- Lightbox -->
-  <div class="lb" id="lb" role="dialog" aria-label="Image preview"><button class="lb-close" id="lb-close" aria-label="Close image preview">×</button><img id="lb-img" src="" alt=""></div>
+  <div class="lb" id="lb" role="dialog" aria-label="Image preview"><button class="lb-close" id="lb-close"
+      aria-label="Close image preview">×</button><img id="lb-img" src="" alt=""></div>
 
   <!-- Global Search Overlay -->
   <div class="global-search-overlay" id="global-search-overlay" role="dialog" aria-label="Search products">
     <div class="gs-inner">
       <div class="gs-input-wrap">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input class="gs-input" id="gs-input" type="text" placeholder="Search plants & creations..." autocomplete="off" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input class="gs-input" id="gs-input" type="text" placeholder="Search plants & creations..." autocomplete="off"
+          aria-label="Search">
         <button class="gs-close" id="gs-close" aria-label="Close search">&times;</button>
       </div>
       <div class="gs-results" id="gs-results">
@@ -1200,6 +1255,7 @@
 
   <script src="scrollbar.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="marketing.js" defer></script>
 </body>
 
 </html>
